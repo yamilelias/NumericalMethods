@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
  *
  * @author Yamil Elías
  */
-public class GaussCalculator {
+public class GaussCalculator_1 {
     private int size;
     private double[][] matrix;
     JTextArea area;
@@ -23,7 +23,7 @@ public class GaussCalculator {
      * @param matrix
      * @param area 
      */
-    public GaussCalculator(int size, double[][] matrix, JTextArea area) {
+    public GaussCalculator_1(int size, double[][] matrix, JTextArea area) {
         this.size = size;
         this.matrix = matrix;
         this.area = area;

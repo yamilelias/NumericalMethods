@@ -28,6 +28,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         newtonMethod = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,31 +39,48 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Gauss");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(553, Short.MAX_VALUE)
-                .addComponent(newtonMethod)
-                .addGap(131, 131, 131))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(newtonMethod))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(93, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addComponent(newtonMethod)
-                .addGap(396, 396, 396))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void newtonMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newtonMethodActionPerformed
-        GUINewtonMethod newton; = new GUINewtonMethod();
+        GUINewtonMethod newton = new GUINewtonMethod();
         newton.setVisible(true);
-        newton.setLocation(null);
     }//GEN-LAST:event_newtonMethodActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        GUIGaussMethod gauss = new GUIGaussMethod();
+        gauss.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,6 +118,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton newtonMethod;
     // End of variables declaration//GEN-END:variables
 }
