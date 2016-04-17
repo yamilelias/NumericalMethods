@@ -24,12 +24,12 @@ import javax.swing.JOptionPane;
 public class GUIGaussMethod extends javax.swing.JFrame {
 
     GaussCalculator calculator;
-    GUI gui;
-    private double[][] matrix = new double[5][6];
     
     /**
-     * Creates new form
+     * Creates new form interfaz
      */
+    private double[][] matrix = new double[5][6];
+
     public GUIGaussMethod() {
         initComponents();
     }
@@ -49,7 +49,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         resultArea = new javax.swing.JTextArea();
         calculate_button = new javax.swing.JButton();
         clean_button = new javax.swing.JButton();
-        principal_button = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         MatrixPane = new javax.swing.JPanel();
         ValuesPane = new javax.swing.JPanel();
         a01 = new javax.swing.JTextField();
@@ -112,12 +112,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
             }
         });
 
-        principal_button.setText("Principal");
-        principal_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                principal_buttonActionPerformed(evt);
-            }
-        });
+        jButton1.setText("Principal");
 
         a01.setText("1");
         a01.addActionListener(new java.awt.event.ActionListener() {
@@ -413,7 +408,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(143, 143, 143)
-                                .addComponent(principal_button))
+                                .addComponent(jButton1))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -429,12 +424,13 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(MatrixPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(principal_button)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(calculate_button)
                         .addGap(18, 18, 18)
                         .addComponent(clean_button)
                         .addGap(13, 13, 13)))
+                .addGap(18, 18, 18)
                 .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -550,13 +546,6 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         resultArea.setText("");
     }//GEN-LAST:event_clean_buttonActionPerformed
 
-    private void principal_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_buttonActionPerformed
-        // TODO add your handling code here:
-        gui = new GUI();
-        gui.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_principal_buttonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LabelsPane;
@@ -595,13 +584,13 @@ public class GUIGaussMethod extends javax.swing.JFrame {
     private javax.swing.JTextField a46;
     private javax.swing.JButton calculate_button;
     private javax.swing.JButton clean_button;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labe_w;
     private javax.swing.JLabel label_r;
     private javax.swing.JLabel label_v;
     private javax.swing.JLabel label_x;
     private javax.swing.JLabel label_y;
     private javax.swing.JLabel label_z;
-    private javax.swing.JButton principal_button;
     private javax.swing.JTextArea resultArea;
     private javax.swing.JScrollPane scrollPane;
     // End of variables declaration//GEN-END:variables

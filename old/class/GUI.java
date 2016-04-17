@@ -73,7 +73,6 @@ public class GUI extends javax.swing.JFrame {
     private void newtonMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newtonMethodActionPerformed
         GUINewtonMethod newton = new GUINewtonMethod();
         newton.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_newtonMethodActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -81,7 +80,6 @@ public class GUI extends javax.swing.JFrame {
         
         GUIGaussMethod gauss = new GUIGaussMethod();
         gauss.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
