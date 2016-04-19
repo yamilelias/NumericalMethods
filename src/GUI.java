@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-
 /**
  *
  * @author Yamil Elías
@@ -96,7 +95,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_GaussMethodActionPerformed
 
     private void PolynomialMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PolynomialMethodActionPerformed
-        GUIPoly poly = new GUIPoly();
+        GUIPolyMethod poly = new GUIPolyMethod();
         poly.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_PolynomialMethodActionPerformed

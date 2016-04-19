@@ -1,21 +1,11 @@
 /*
- *Bienvenido a "M2025", nuestra calculadora de matrices. Esta calculadora le va 
-permitir obtener las soluciones para sistemas de ecuaciones con hasta 5 incògnitas
-y 5 ecuaciones, por el mètodo de Gauss-Jordan (Vèase el manual de usuario para
-comprender el funcionamiento del mètodo).
-*Esta aplicaciòn se creò el 06/05/2015, por Renè Melèndez (A01560704, autor original)
-y fue tambièn Renè Melèndez (A01560704) quien lo modificò por ùltima vez tambièn 
-el 06/05/2015. Los programas que llaman a esta calculadora son Gauss.java, y a 
-su vez, èsta no llama ningun programa. 
-
-A continuacion encontrarà el còdigo en sì, con comentarios en cada secciòn
-explicando brevemente el funcionamiento de cada una 
+ *
  * 
  * 
  */
 
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
+import gauss.GaussCalculator;
 
 /**
  *

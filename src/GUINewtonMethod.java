@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import newton.NewtonCalculator;
+
 /**
  *
  * @author Yamil Elías
