@@ -98,7 +98,7 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         resultTextArea.setForeground(new java.awt.Color(255, 255, 255));
         resultTextArea.setLineWrap(true);
         resultTextArea.setRows(5);
-        resultTextArea.setToolTipText("Pantalla de resultados de los cálculos según los datos ingresados");
+        resultTextArea.setToolTipText("Pantalla de resultados");
         resultTextArea.setOpaque(false);
         resultScrollPane.setViewportView(resultTextArea);
 
@@ -206,7 +206,7 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         gradeScroller01.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
         gradeScroller01.setForeground(new java.awt.Color(255, 255, 255));
         gradeScroller01.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "1", "2", "3", "4", "5" }));
-        gradeScroller01.setToolTipText("Grado del primer polinomio");
+        gradeScroller01.setToolTipText("Selecciona el grado de la funcion");
         gradeScroller01.setFocusable(false);
         gradeScroller01.setOpaque(false);
         gradeScroller01.addItemListener(new java.awt.event.ItemListener() {
@@ -457,7 +457,7 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         gradeScroller02.setFont(new java.awt.Font("Eras Light ITC", 0, 12)); // NOI18N
         gradeScroller02.setForeground(new java.awt.Color(255, 255, 255));
         gradeScroller02.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "1", "2", "3", "4", "5" }));
-        gradeScroller02.setToolTipText("Grado del segundo polinomio");
+        gradeScroller02.setToolTipText("Selecciona el grado de la funcion");
         gradeScroller02.setFocusable(false);
         gradeScroller02.setOpaque(false);
         gradeScroller02.addItemListener(new java.awt.event.ItemListener() {
@@ -700,6 +700,7 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         );
 
         principalButton.setText("Principal");
+        principalButton.setToolTipText("Volver al menú principal");
         principalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 principalButtonActionPerformed(evt);
@@ -853,14 +854,20 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
 
                         if((jop==0)&&(jop1==0))
                         {
-                            resultTextArea.setText(calculator.main());
+                            System.out.println("Entro para imprimir");
+                            calculator.main();
+                            resultTextArea.setText(calculator.getResult());
                             resetButton.setEnabled(true); // Activates reset button
                         }
                     }
                 }
                 else
                 {
-                    resultTextArea.setText(calculator.main());
+                    System.out.println("Entro para imprimir");
+                    calculator.main();
+                    System.out.println("Termino de calcular");
+                    resultTextArea.setText(calculator.getResult());
+                    System.out.println("Deberia de aparecer...");
                     resetButton.setEnabled(true);
                 }
             }
