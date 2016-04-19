@@ -33,13 +33,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                              <Component id="principal_button" min="-2" max="-2" attributes="0"/>
+                              <Component id="principalButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="calculate_button" pref="121" max="32767" attributes="0"/>
-                                  <Component id="clean_button" max="32767" attributes="0"/>
+                                  <Component id="calculateButton" pref="121" max="32767" attributes="0"/>
+                                  <Component id="cleanButton" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
@@ -57,11 +57,11 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="MatrixPane" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="principal_button" min="-2" max="-2" attributes="0"/>
+                      <Component id="principalButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="calculate_button" min="-2" max="-2" attributes="0"/>
+                      <Component id="calculateButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="clean_button" min="-2" max="-2" attributes="0"/>
+                      <Component id="cleanButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -88,28 +88,28 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="calculate_button">
+    <Component class="javax.swing.JButton" name="calculateButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculate_buttonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="clean_button">
+    <Component class="javax.swing.JButton" name="cleanButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpiar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clean_buttonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cleanButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="principal_button">
+    <Component class="javax.swing.JButton" name="principalButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Principal"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="principal_buttonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="principalButtonActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="MatrixPane">
@@ -468,7 +468,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="label_v" min="-2" pref="43" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="labe_w" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="label_w" min="-2" pref="46" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="label_x" min="-2" pref="46" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -487,7 +487,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="label_v" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="labe_w" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_w" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="label_x" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="label_y" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="label_z" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -508,7 +508,7 @@
                 <Property name="text" type="java.lang.String" value="V"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="labe_w">
+            <Component class="javax.swing.JLabel" name="label_w">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="0"/>

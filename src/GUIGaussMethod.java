@@ -37,9 +37,9 @@ public class GUIGaussMethod extends javax.swing.JFrame {
 
         scrollPane = new javax.swing.JScrollPane();
         resultArea = new javax.swing.JTextArea();
-        calculate_button = new javax.swing.JButton();
-        clean_button = new javax.swing.JButton();
-        principal_button = new javax.swing.JButton();
+        calculateButton = new javax.swing.JButton();
+        cleanButton = new javax.swing.JButton();
+        principalButton = new javax.swing.JButton();
         MatrixPane = new javax.swing.JPanel();
         ValuesPane = new javax.swing.JPanel();
         a01 = new javax.swing.JTextField();
@@ -75,7 +75,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         a46 = new javax.swing.JTextField();
         LabelsPane = new javax.swing.JPanel();
         label_v = new javax.swing.JLabel();
-        labe_w = new javax.swing.JLabel();
+        label_w = new javax.swing.JLabel();
         label_x = new javax.swing.JLabel();
         label_y = new javax.swing.JLabel();
         label_z = new javax.swing.JLabel();
@@ -88,24 +88,24 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         resultArea.setRows(5);
         scrollPane.setViewportView(resultArea);
 
-        calculate_button.setText("Calcular");
-        calculate_button.addActionListener(new java.awt.event.ActionListener() {
+        calculateButton.setText("Calcular");
+        calculateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calculate_buttonActionPerformed(evt);
+                calculateButtonActionPerformed(evt);
             }
         });
 
-        clean_button.setText("Limpiar");
-        clean_button.addActionListener(new java.awt.event.ActionListener() {
+        cleanButton.setText("Limpiar");
+        cleanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clean_buttonActionPerformed(evt);
+                cleanButtonActionPerformed(evt);
             }
         });
 
-        principal_button.setText("Principal");
-        principal_button.addActionListener(new java.awt.event.ActionListener() {
+        principalButton.setText("Principal");
+        principalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                principal_buttonActionPerformed(evt);
+                principalButtonActionPerformed(evt);
             }
         });
 
@@ -310,9 +310,9 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         label_v.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_v.setText("V");
 
-        labe_w.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labe_w.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labe_w.setText("W");
+        label_w.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        label_w.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_w.setText("W");
 
         label_x.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_x.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -338,7 +338,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(label_v, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labe_w, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(label_w, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label_x, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -355,7 +355,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(LabelsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_v)
-                    .addComponent(labe_w)
+                    .addComponent(label_w)
                     .addComponent(label_x)
                     .addComponent(label_y)
                     .addComponent(label_z)
@@ -403,12 +403,12 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(143, 143, 143)
-                                .addComponent(principal_button))
+                                .addComponent(principalButton))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(calculate_button, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                    .addComponent(clean_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(calculateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                    .addComponent(cleanButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(39, 39, 39)))))
                 .addContainerGap())
         );
@@ -419,11 +419,11 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(MatrixPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(principal_button)
+                        .addComponent(principalButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(calculate_button)
+                        .addComponent(calculateButton)
                         .addGap(18, 18, 18)
-                        .addComponent(clean_button)
+                        .addComponent(cleanButton)
                         .addGap(13, 13, 13)))
                 .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                 .addContainerGap())
@@ -433,7 +433,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void calculate_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculate_buttonActionPerformed
+    private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
         try {
             int size = 2;
             
@@ -461,7 +461,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor llena todos los campos correctamente");
         }
 
-    }//GEN-LAST:event_calculate_buttonActionPerformed
+    }//GEN-LAST:event_calculateButtonActionPerformed
 
     public void setMatrix(){
         resultArea.setText("");// Clean up Text Area (if it was already used)
@@ -506,7 +506,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_a04ActionPerformed
 
-    private void clean_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clean_buttonActionPerformed
+    private void cleanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanButtonActionPerformed
         a01.setText(""+0);
         a02.setText(""+0);
         a03.setText(""+0);
@@ -538,14 +538,14 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         a45.setText(""+0);
         a46.setText(""+0);
         resultArea.setText("");
-    }//GEN-LAST:event_clean_buttonActionPerformed
+    }//GEN-LAST:event_cleanButtonActionPerformed
 
-    private void principal_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principal_buttonActionPerformed
+    private void principalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principalButtonActionPerformed
         // TODO add your handling code here:
         gui = new GUI();
         gui.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_principal_buttonActionPerformed
+    }//GEN-LAST:event_principalButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -583,15 +583,15 @@ public class GUIGaussMethod extends javax.swing.JFrame {
     private javax.swing.JTextField a44;
     private javax.swing.JTextField a45;
     private javax.swing.JTextField a46;
-    private javax.swing.JButton calculate_button;
-    private javax.swing.JButton clean_button;
-    private javax.swing.JLabel labe_w;
+    private javax.swing.JButton calculateButton;
+    private javax.swing.JButton cleanButton;
     private javax.swing.JLabel label_r;
     private javax.swing.JLabel label_v;
+    private javax.swing.JLabel label_w;
     private javax.swing.JLabel label_x;
     private javax.swing.JLabel label_y;
     private javax.swing.JLabel label_z;
-    private javax.swing.JButton principal_button;
+    private javax.swing.JButton principalButton;
     private javax.swing.JTextArea resultArea;
     private javax.swing.JScrollPane scrollPane;
     // End of variables declaration//GEN-END:variables

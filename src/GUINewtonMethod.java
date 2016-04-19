@@ -29,8 +29,8 @@ public class GUINewtonMethod extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        title_label = new javax.swing.JLabel();
-        data_panel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        dataPanel = new javax.swing.JPanel();
         x_panel = new javax.swing.JPanel();
         x_value_label = new javax.swing.JLabel();
         x_value = new javax.swing.JTextField();
@@ -49,20 +49,20 @@ public class GUINewtonMethod extends javax.swing.JFrame {
         x_exp3_label = new javax.swing.JLabel();
         x_exp2_label = new javax.swing.JLabel();
         x_exp1_label = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        result_scrollpane = new javax.swing.JScrollPane();
+        principalButton = new javax.swing.JButton();
+        resultScrollpane = new javax.swing.JScrollPane();
         resultArea = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        labelPanel = new javax.swing.JPanel();
+        label_i = new javax.swing.JLabel();
+        label_Xi = new javax.swing.JLabel();
+        label_fx = new javax.swing.JLabel();
+        label_fprime = new javax.swing.JLabel();
+        label_error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        title_label.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        title_label.setText("Newton");
+        titleLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        titleLabel.setText("Newton");
 
         x_value_label.setText("x=");
 
@@ -200,15 +200,15 @@ public class GUINewtonMethod extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout data_panelLayout = new javax.swing.GroupLayout(data_panel);
-        data_panel.setLayout(data_panelLayout);
-        data_panelLayout.setHorizontalGroup(
-            data_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(data_panelLayout.createSequentialGroup()
+        javax.swing.GroupLayout dataPanelLayout = new javax.swing.GroupLayout(dataPanel);
+        dataPanel.setLayout(dataPanelLayout);
+        dataPanelLayout.setHorizontalGroup(
+            dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dataPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(data_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(x_values_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(data_panelLayout.createSequentialGroup()
+                    .addGroup(dataPanelLayout.createSequentialGroup()
                         .addComponent(x_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
                         .addComponent(calculate)
@@ -216,69 +216,69 @@ public class GUINewtonMethod extends javax.swing.JFrame {
                         .addComponent(err_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        data_panelLayout.setVerticalGroup(
-            data_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, data_panelLayout.createSequentialGroup()
+        dataPanelLayout.setVerticalGroup(
+            dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dataPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(x_values_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(data_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(x_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(err_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, data_panelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dataPanelLayout.createSequentialGroup()
                         .addComponent(calculate)
                         .addContainerGap())))
         );
 
-        jButton1.setText("Principal");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        principalButton.setText("Principal");
+        principalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                principalButtonActionPerformed(evt);
             }
         });
 
         resultArea.setEditable(false);
         resultArea.setColumns(20);
         resultArea.setRows(5);
-        result_scrollpane.setViewportView(resultArea);
+        resultScrollpane.setViewportView(resultArea);
 
-        jLabel1.setText("i");
+        label_i.setText("i");
 
-        jLabel2.setText("Xi");
+        label_Xi.setText("Xi");
 
-        jLabel3.setText("f(x)");
+        label_fx.setText("f(x)");
 
-        jLabel4.setText("f'(x)");
+        label_fprime.setText("f'(x)");
 
-        jLabel5.setText("Error");
+        label_error.setText("Error");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout labelPanelLayout = new javax.swing.GroupLayout(labelPanel);
+        labelPanel.setLayout(labelPanelLayout);
+        labelPanelLayout.setHorizontalGroup(
+            labelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(labelPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(label_i, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(label_Xi, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(144, 144, 144)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(label_fx, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(label_fprime, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(label_error, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        labelPanelLayout.setVerticalGroup(
+            labelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, labelPanelLayout.createSequentialGroup()
                 .addGap(0, 21, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)))
+                .addGroup(labelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_i)
+                    .addComponent(label_Xi)
+                    .addComponent(label_fx)
+                    .addComponent(label_fprime)
+                    .addComponent(label_error)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -289,18 +289,18 @@ public class GUINewtonMethod extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addComponent(title_label))
+                        .addComponent(titleLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(82, 82, 82)
-                        .addComponent(jButton1)))
+                        .addComponent(principalButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(data_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(result_scrollpane, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(labelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(resultScrollpane, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -309,16 +309,16 @@ public class GUINewtonMethod extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(data_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(title_label)
+                        .addComponent(titleLabel)
                         .addGap(46, 46, 46)
-                        .addComponent(jButton1)
+                        .addComponent(principalButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(result_scrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(resultScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -367,30 +367,30 @@ public class GUINewtonMethod extends javax.swing.JFrame {
 
     }//GEN-LAST:event_x_exp3_valueActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void principalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principalButtonActionPerformed
         GUI gui = new GUI();
         gui.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_principalButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calculate;
-    private javax.swing.JPanel data_panel;
+    private javax.swing.JPanel dataPanel;
     private javax.swing.JPanel err_panel;
     private javax.swing.JLabel function_label;
     private javax.swing.JTextField iter_value;
     private javax.swing.JLabel iter_value_label;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel labelPanel;
+    private javax.swing.JLabel label_Xi;
+    private javax.swing.JLabel label_error;
+    private javax.swing.JLabel label_fprime;
+    private javax.swing.JLabel label_fx;
+    private javax.swing.JLabel label_i;
+    private javax.swing.JButton principalButton;
     private javax.swing.JTextArea resultArea;
-    private javax.swing.JScrollPane result_scrollpane;
-    private javax.swing.JLabel title_label;
+    private javax.swing.JScrollPane resultScrollpane;
+    private javax.swing.JLabel titleLabel;
     private javax.swing.JTextField x_exp0_value;
     private javax.swing.JLabel x_exp1_label;
     private javax.swing.JTextField x_exp1_value;
