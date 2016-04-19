@@ -34,18 +34,18 @@ public class GUIHornerMethod extends javax.swing.JFrame {
         innitialTextField = new javax.swing.JTextField();
         innitialLabel = new javax.swing.JLabel();
         valuesPanel = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        x0 = new javax.swing.JTextField();
+        label_x1 = new javax.swing.JLabel();
+        x1 = new javax.swing.JTextField();
+        label_x2 = new javax.swing.JLabel();
+        x2 = new javax.swing.JTextField();
+        label_x3 = new javax.swing.JLabel();
+        x3 = new javax.swing.JTextField();
+        label_x4 = new javax.swing.JLabel();
+        x4 = new javax.swing.JTextField();
+        label_x5 = new javax.swing.JLabel();
+        x5 = new javax.swing.JTextField();
+        label_fx = new javax.swing.JLabel();
         resultScrollPane = new javax.swing.JScrollPane();
         resultTextArea = new javax.swing.JTextArea();
 
@@ -65,35 +65,35 @@ public class GUIHornerMethod extends javax.swing.JFrame {
 
         innitialLabel.setText("Valor inicial =");
 
-        jTextField5.setToolTipText("Insertar valor");
-        jTextField5.setPreferredSize(new java.awt.Dimension(35, 20));
+        x0.setToolTipText("Insertar valor");
+        x0.setPreferredSize(new java.awt.Dimension(35, 20));
 
-        jLabel6.setText("x +");
+        label_x1.setText("x +");
 
-        jTextField6.setToolTipText("Insertar valor");
-        jTextField6.setPreferredSize(new java.awt.Dimension(35, 20));
+        x1.setToolTipText("Insertar valor");
+        x1.setPreferredSize(new java.awt.Dimension(35, 20));
 
-        jLabel5.setText("x^2 +");
+        label_x2.setText("x^2 +");
 
-        jTextField4.setToolTipText("Insertar valor");
-        jTextField4.setPreferredSize(new java.awt.Dimension(35, 20));
+        x2.setToolTipText("Insertar valor");
+        x2.setPreferredSize(new java.awt.Dimension(35, 20));
 
-        jLabel4.setText("x^3 +");
+        label_x3.setText("x^3 +");
 
-        jTextField3.setToolTipText("Insertar valor");
-        jTextField3.setPreferredSize(new java.awt.Dimension(35, 20));
+        x3.setToolTipText("Insertar valor");
+        x3.setPreferredSize(new java.awt.Dimension(35, 20));
 
-        jLabel3.setText("x^4 +");
+        label_x4.setText("x^4 +");
 
-        jTextField2.setToolTipText("Insertar valor");
-        jTextField2.setPreferredSize(new java.awt.Dimension(35, 20));
+        x4.setToolTipText("Insertar valor");
+        x4.setPreferredSize(new java.awt.Dimension(35, 20));
 
-        jLabel2.setText("x^5 +");
+        label_x5.setText("x^5 +");
 
-        jTextField1.setToolTipText("Insertar valor");
-        jTextField1.setPreferredSize(new java.awt.Dimension(35, 20));
+        x5.setToolTipText("Insertar valor");
+        x5.setPreferredSize(new java.awt.Dimension(35, 20));
 
-        jLabel1.setText("f(x)=");
+        label_fx.setText("f(x)=");
 
         javax.swing.GroupLayout valuesPanelLayout = new javax.swing.GroupLayout(valuesPanel);
         valuesPanel.setLayout(valuesPanelLayout);
@@ -101,29 +101,29 @@ public class GUIHornerMethod extends javax.swing.JFrame {
             valuesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(valuesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(label_fx)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(x5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addComponent(jLabel2)
+                .addComponent(label_x5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(x4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addComponent(label_x4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(x3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addComponent(label_x3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(x2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
+                .addComponent(label_x2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(x1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(label_x1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(x0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         valuesPanelLayout.setVerticalGroup(
@@ -131,18 +131,18 @@ public class GUIHornerMethod extends javax.swing.JFrame {
             .addGroup(valuesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(valuesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(x5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(x4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(x3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(x1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(x0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(x2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fx)
+                    .addComponent(label_x5)
+                    .addComponent(label_x4)
+                    .addComponent(label_x3)
+                    .addComponent(label_x2)
+                    .addComponent(label_x1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -190,23 +190,23 @@ public class GUIHornerMethod extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(principalButton)
-                .addGap(92, 92, 92))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(resultScrollPane)
                     .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(principalButton)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(33, 33, 33)
                 .addComponent(principalButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(resultScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,21 +262,21 @@ public class GUIHornerMethod extends javax.swing.JFrame {
     private javax.swing.JPanel controlPanel;
     private javax.swing.JLabel innitialLabel;
     private javax.swing.JTextField innitialTextField;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel label_fx;
+    private javax.swing.JLabel label_x1;
+    private javax.swing.JLabel label_x2;
+    private javax.swing.JLabel label_x3;
+    private javax.swing.JLabel label_x4;
+    private javax.swing.JLabel label_x5;
     private javax.swing.JButton principalButton;
     private javax.swing.JScrollPane resultScrollPane;
     private javax.swing.JTextArea resultTextArea;
     private javax.swing.JPanel valuesPanel;
+    private javax.swing.JTextField x0;
+    private javax.swing.JTextField x1;
+    private javax.swing.JTextField x2;
+    private javax.swing.JTextField x3;
+    private javax.swing.JTextField x4;
+    private javax.swing.JTextField x5;
     // End of variables declaration//GEN-END:variables
 }
