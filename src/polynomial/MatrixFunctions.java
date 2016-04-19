@@ -1,5 +1,8 @@
+package polynomial;
+
 import java.util.ArrayList;
 import java.util.Iterator;
+import polynomial.Pair;
 
 /*
  * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
@@ -55,7 +58,7 @@ public final class MatrixFunctions {
         }
     }
 
-    static double regress(double x, ArrayList<Double> terms) {
+    public static double regress(double x, ArrayList<Double> terms) {
         double a = 0.0;
         int exp = 0;
         Iterator<Double> i$ = terms.iterator();
@@ -67,7 +70,7 @@ public final class MatrixFunctions {
         return a;
     }
 
-    static double corr_coeff(ArrayList<Pair> data, ArrayList<Double> terms) {
+    public static double corr_coeff(ArrayList<Pair> data, ArrayList<Double> terms) {
         double r = 0.0;
         int n = data.size();
         double sx = 0.0;
@@ -91,7 +94,7 @@ public final class MatrixFunctions {
         return r;
     }
 
-    static double std_error(ArrayList<Pair> data, ArrayList<Double> terms) {
+    public static double std_error(ArrayList<Pair> data, ArrayList<Double> terms) {
         double r = 0.0;
         int n = data.size();
         if (n > 2) {
@@ -107,8 +110,10 @@ public final class MatrixFunctions {
     /**
      * Method that compute coefficients
      * @param data ArrayList<Pair>
+     * @param p integer value
+     * @return ArrayList<Double>
      */
-    static ArrayList<Double> compute_coefficients(ArrayList<Pair> data, int p) {
+    public static ArrayList<Double> compute_coefficients(ArrayList<Pair> data, int p) {
         int r; // Aux int
         int n = data.size(); // Size of the ArrayList
         int rs = 2 * ++p - 1; // (2 * (p+1)) THEN p-1

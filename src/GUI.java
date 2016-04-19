@@ -28,7 +28,8 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         newtonMethod = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        GaussMethod = new javax.swing.JButton();
+        PolynomialMethod = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,10 +40,17 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Gauss");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        GaussMethod.setText("Gauss");
+        GaussMethod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                GaussMethodActionPerformed(evt);
+            }
+        });
+
+        PolynomialMethod.setText("Polynomial");
+        PolynomialMethod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PolynomialMethodActionPerformed(evt);
             }
         });
 
@@ -53,9 +61,10 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(PolynomialMethod)
+                    .addComponent(GaussMethod)
                     .addComponent(newtonMethod))
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,8 +72,10 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(newtonMethod)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addComponent(GaussMethod)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PolynomialMethod)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -76,13 +87,19 @@ public class GUI extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_newtonMethodActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void GaussMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GaussMethodActionPerformed
         // TODO add your handling code here:
         
         GUIGaussMethod gauss = new GUIGaussMethod();
         gauss.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_GaussMethodActionPerformed
+
+    private void PolynomialMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PolynomialMethodActionPerformed
+        GUIPoly poly = new GUIPoly();
+        poly.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_PolynomialMethodActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,7 +137,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton GaussMethod;
+    private javax.swing.JButton PolynomialMethod;
     private javax.swing.JButton newtonMethod;
     // End of variables declaration//GEN-END:variables
 }

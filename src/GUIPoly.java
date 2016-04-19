@@ -7,12 +7,15 @@
 import java.util.ArrayList;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.JTextArea;
+import polynomial.Pair;
+import polynomial.MatrixFunctions;
 
 /**
  *
  * @author Yamil Elías
  */
-public class GUIPoly extends javax.swing.JFrame {
+public final class GUIPoly extends javax.swing.JFrame {
 
     private boolean applet = true;
     String nameVersion = "Regresión Polinomial"; //Aquí está el nombre de la aplicación
@@ -73,6 +76,7 @@ public class GUIPoly extends javax.swing.JFrame {
         inputTextArea.setRows(5);
         inputScrollPane.setViewportView(inputTextArea);
 
+        gradeField.setModel(new javax.swing.SpinnerNumberModel(2, 1, 512, 1));
         gradeField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         gradeField.setOpaque(false);
 
@@ -192,7 +196,7 @@ public class GUIPoly extends javax.swing.JFrame {
             }
             if (!paired) {
                 String exc = "La informacion no esta en pares de x,y favor de editarla.";
-                this.writeResult(exc, this.resultText);
+                this.writeResult(exc, this.resultTextArea);
                 throw new Exception("La informacion no esta en pares de x,y favor de editarla.");
             }
         }
@@ -225,12 +229,12 @@ public class GUIPoly extends javax.swing.JFrame {
             this.dataXmin = this.xmin;
             this.dataYmax = this.ymax;
             this.dataYmin = this.ymin;
-            if (update) { // If update is true, then change TextArea
+            /*if (update) { // If update is true, then change TextArea
                 this.tableStartTextField.setText(String.format("%.2f", this.dataXmin));
                 this.tableEndTextField.setText(String.format("%.2f", this.dataXmax));
                 double step = (this.dataXmax - this.dataXmin) / 20.0;
                 this.tableStepSizeTextField.setText(String.format("%.2f", step));
-            }
+            }*/
             double q = (this.ymax - this.ymin) / 6.0;
             this.ymin -= q;
             this.ymax += q;
@@ -249,9 +253,6 @@ public class GUIPoly extends javax.swing.JFrame {
 
     public void process(boolean update) {
         this.data_valid = false;
-        this.poly_order = this.poly_order < 0 ? 0 : this.poly_order; // If poly_order is less than 0 then set to 0
-        this.poly_order = this.poly_order > 512 ? 512 : this.poly_order; // F poly_order is bigger than 512 then set to 512
-        this.gradeField.setText("" + this.poly_order); // Set text file to polyorder value
         this.errorMsg = "";
         this.getData(update);
         int size = this.userDataList.size();
@@ -272,20 +273,8 @@ public class GUIPoly extends javax.swing.JFrame {
         }
     }
 
-    private void writeAppletResult(String s) {
-        JSObject window = JSObject.getWindow(this);
-        JSObject doc = (JSObject)window.getMember("document");
-        JSObject form = (JSObject)doc.getMember("form");
-        JSObject field = (JSObject)form.getMember("results");
-        field.setMember("value", s);
-    }
-
     private void writeResult(String s, JTextArea jta) {
-        if (this.applet) {
-            this.writeAppletResult(s);
-        } else {
             jta.setText(s);
-        }
     }
 
     void newDegree(int v) {
@@ -382,33 +371,7 @@ public class GUIPoly extends javax.swing.JFrame {
     double plotFunct(double x) {
         return MatrixFunctions.regress(x, this.terms);
     }
-    
-    /*
-     *  Start of Clipping Methods
-     */
-
-    void clipCopyText(String s) {
-        ClipboardFunctions.clipCopy(s);
-    }
-
-    void clipCopyResult() {
-        this.clipCopyText(this.resultTextArea.getText());
-    }
-
-    void clipCopyTable() {
-        this.clipCopyText(this.tableResultTextArea.getText());
-    }
-
-    void clipPaste() {
-        String data = ClipboardFunctions.clipPaste(this);
-        data = this.inputTextArea.getText() + data;
-        this.inputTextArea.setText(data);
-    }
-    
-    /*
-     *  End of Clipping Methods
-     */
-
+ 
     double ntrp(double xa, double xb, double ya, double yb, double x) {
         return (x - xa) * (yb - ya) / (xb - xa) + ya;
     }
@@ -421,7 +384,7 @@ public class GUIPoly extends javax.swing.JFrame {
         return row;
     }
 
-    public void generateTable() {
+    /*public void generateTable() {
         try {
             String newRow;
             double a = Double.parseDouble(this.tableStartTextField.getText());
@@ -448,7 +411,7 @@ public class GUIPoly extends javax.swing.JFrame {
         catch (Exception e) {
             this.writeResult(e.toString(), this.tableResultTextArea);
         }
-    }
+    }*/
     
     /**
      * @param args the command line arguments
@@ -495,20 +458,21 @@ public class GUIPoly extends javax.swing.JFrame {
     private javax.swing.JScrollPane resultScrollPane;
     private javax.swing.JTextArea resultTextArea;
     // End of variables declaration//GEN-END:variables
-}
+} // End of GUIPoly
 
+/*
 class MyDocumentListener implements DocumentListener {
     MyDocumentListener() {}
 
     public void insertUpdate(DocumentEvent e) {
-        PolySolve.this.process(true);
+        GUIPoly.this.process(true);
     }
 
     public void removeUpdate(DocumentEvent e) {
-        PolySolve.this.process(true);
+        GUIPoly.this.process(true);
     }
 
     public void changedUpdate(DocumentEvent e) {
-        PolySolve.this.process(true);
+        GUIPoly.this.process(true);
     }
-}
+}*/

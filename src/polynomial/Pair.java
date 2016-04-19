@@ -1,3 +1,5 @@
+package polynomial;
+
 /**
  * Class to make Pair objects
  */
