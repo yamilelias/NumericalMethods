@@ -43,7 +43,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="principalButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
               <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="resultScrollPane" min="-2" pref="149" max="-2" attributes="0"/>
@@ -70,6 +70,10 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="valuesPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -78,16 +82,12 @@
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="innitialLabel" min="-2" pref="72" max="-2" attributes="0"/>
+                                  <Component id="innitialLabel" min="-2" pref="75" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="innitialTextField" min="-2" pref="36" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="valuesPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -101,7 +101,7 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="innitialTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="innitialLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="innitialLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="15" max="32767" attributes="0"/>
                   <Component id="calculateButton" min="-2" max="-2" attributes="0"/>
@@ -115,10 +115,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Calcular"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="innitialTextField">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Insertar valor"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[6, 22]"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="innitialLabel">
@@ -178,7 +184,7 @@
                           <Component id="label_x2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="label_x1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -188,7 +194,7 @@
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Insertar valor"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[35, 20]"/>
+                  <Dimension value="[35, 22]"/>
                 </Property>
               </Properties>
             </Component>
@@ -201,7 +207,7 @@
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Insertar valor"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[35, 20]"/>
+                  <Dimension value="[35, 22]"/>
                 </Property>
               </Properties>
             </Component>
@@ -214,7 +220,7 @@
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Insertar valor"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[35, 20]"/>
+                  <Dimension value="[35, 22]"/>
                 </Property>
               </Properties>
             </Component>
@@ -227,7 +233,7 @@
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Insertar valor"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[35, 20]"/>
+                  <Dimension value="[35, 22]"/>
                 </Property>
               </Properties>
             </Component>
@@ -240,7 +246,7 @@
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Insertar valor"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[35, 20]"/>
+                  <Dimension value="[35, 22]"/>
                 </Property>
               </Properties>
             </Component>
@@ -253,7 +259,7 @@
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Insertar valor"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[35, 20]"/>
+                  <Dimension value="[35, 22]"/>
                 </Property>
               </Properties>
             </Component>
@@ -274,6 +280,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

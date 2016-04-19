@@ -60,38 +60,44 @@ public class GUIHornerMethod extends javax.swing.JFrame {
         });
 
         calculateButton.setText("Calcular");
+        calculateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calculateButtonActionPerformed(evt);
+            }
+        });
 
         innitialTextField.setToolTipText("Insertar valor");
+        innitialTextField.setPreferredSize(new java.awt.Dimension(6, 22));
 
         innitialLabel.setText("Valor inicial =");
 
         x0.setToolTipText("Insertar valor");
-        x0.setPreferredSize(new java.awt.Dimension(35, 20));
+        x0.setPreferredSize(new java.awt.Dimension(35, 22));
 
         label_x1.setText("x +");
 
         x1.setToolTipText("Insertar valor");
-        x1.setPreferredSize(new java.awt.Dimension(35, 20));
+        x1.setPreferredSize(new java.awt.Dimension(35, 22));
 
         label_x2.setText("x^2 +");
 
         x2.setToolTipText("Insertar valor");
-        x2.setPreferredSize(new java.awt.Dimension(35, 20));
+        x2.setPreferredSize(new java.awt.Dimension(35, 22));
 
         label_x3.setText("x^3 +");
 
         x3.setToolTipText("Insertar valor");
-        x3.setPreferredSize(new java.awt.Dimension(35, 20));
+        x3.setPreferredSize(new java.awt.Dimension(35, 22));
 
         label_x4.setText("x^4 +");
 
         x4.setToolTipText("Insertar valor");
-        x4.setPreferredSize(new java.awt.Dimension(35, 20));
+        x4.setPreferredSize(new java.awt.Dimension(35, 22));
 
         label_x5.setText("x^5 +");
 
         x5.setToolTipText("Insertar valor");
-        x5.setPreferredSize(new java.awt.Dimension(35, 20));
+        x5.setPreferredSize(new java.awt.Dimension(35, 22));
 
         label_fx.setText("f(x)=");
 
@@ -143,7 +149,7 @@ public class GUIHornerMethod extends javax.swing.JFrame {
                     .addComponent(label_x3)
                     .addComponent(label_x2)
                     .addComponent(label_x1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
@@ -153,6 +159,9 @@ public class GUIHornerMethod extends javax.swing.JFrame {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(controlPanelLayout.createSequentialGroup()
+                        .addComponent(valuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 16, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,13 +169,10 @@ public class GUIHornerMethod extends javax.swing.JFrame {
                                 .addComponent(calculateButton)
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                                .addComponent(innitialLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(innitialLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(innitialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(287, 287, 287))))
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(valuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 16, Short.MAX_VALUE))))
+                                .addGap(287, 287, 287))))))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +182,7 @@ public class GUIHornerMethod extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(innitialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(innitialLabel))
+                    .addComponent(innitialLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(calculateButton)
                 .addContainerGap())
@@ -184,6 +190,7 @@ public class GUIHornerMethod extends javax.swing.JFrame {
 
         resultTextArea.setColumns(20);
         resultTextArea.setRows(5);
+        resultTextArea.setEnabled(false);
         resultScrollPane.setViewportView(resultTextArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -206,7 +213,7 @@ public class GUIHornerMethod extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(principalButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(resultScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,6 +228,18 @@ public class GUIHornerMethod extends javax.swing.JFrame {
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_principalButtonActionPerformed
+
+    private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
+        Horner horner = new Horner();
+        String resultado = "F(" + innitialTextField.getText() + ")=";
+        resultTextArea.setText("");
+        resultado += "" + horner.evaluate(Integer.parseInt(x5.getText()), Integer.parseInt(x4.getText()), Integer.parseInt(x3.getText()), Integer.parseInt(x2.getText()), Integer.parseInt(x1.getText()), Integer.parseInt(x0.getText()), Integer.parseInt(innitialTextField.getText())) + "\n";
+        resultTextArea.append(horner.derivate(Integer.parseInt(x5.getText()), Integer.parseInt(x4.getText()), Integer.parseInt(x3.getText()), Integer.parseInt(x2.getText()), Integer.parseInt(x1.getText()), Integer.parseInt(innitialTextField.getText())) + "\n");
+        resultado += "F'(" + innitialTextField.getText() + ")=" + horner.evaluate(0, horner.dx[0], horner.dx[1], horner.dx[2], horner.dx[3], horner.dx[4], Integer.parseInt(innitialTextField.getText()));
+        resultTextArea.append(horner.derivate(0, horner.dx[0], horner.dx[1], horner.dx[2], horner.dx[3], Integer.parseInt(innitialTextField.getText())) + "\n\n");
+        resultado += "\nF''(" + innitialTextField.getText() + ")=" + horner.evaluate(0, horner.dx[0], horner.dx[1], horner.dx[2], horner.dx[3], horner.dx[4], Integer.parseInt(innitialTextField.getText()));
+        resultTextArea.append(resultado);
+    }//GEN-LAST:event_calculateButtonActionPerformed
 
     /**
      * @param args the command line arguments
