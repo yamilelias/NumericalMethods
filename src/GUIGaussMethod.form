@@ -91,6 +91,7 @@
     <Component class="javax.swing.JButton" name="calculateButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
+        <Property name="toolTipText" type="java.lang.String" value="Calcular los valores conforme a los datos de la matriz"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateButtonActionPerformed"/>
@@ -99,6 +100,7 @@
     <Component class="javax.swing.JButton" name="cleanButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpiar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Limpia la matriz y el resultado"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cleanButtonActionPerformed"/>
@@ -107,6 +109,7 @@
     <Component class="javax.swing.JButton" name="principalButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Principal"/>
+        <Property name="toolTipText" type="java.lang.String" value="Volver al men&#xfa; principal"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="principalButtonActionPerformed"/>
@@ -148,6 +151,9 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="ValuesPane">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -265,6 +271,7 @@
             <Component class="javax.swing.JTextField" name="a01">
               <Properties>
                 <Property name="text" type="java.lang.String" value="1"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a01ActionPerformed"/>
@@ -273,16 +280,19 @@
             <Component class="javax.swing.JTextField" name="a02">
               <Properties>
                 <Property name="text" type="java.lang.String" value="2"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a03">
               <Properties>
                 <Property name="text" type="java.lang.String" value="3"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a04">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a04ActionPerformed"/>
@@ -291,111 +301,135 @@
             <Component class="javax.swing.JTextField" name="a05">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a15">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a14">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a13">
               <Properties>
                 <Property name="text" type="java.lang.String" value="6"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a12">
               <Properties>
                 <Property name="text" type="java.lang.String" value="5"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a22">
               <Properties>
                 <Property name="text" type="java.lang.String" value="8"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a11">
               <Properties>
                 <Property name="text" type="java.lang.String" value="4"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a21">
               <Properties>
                 <Property name="text" type="java.lang.String" value="7"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a23">
               <Properties>
                 <Property name="text" type="java.lang.String" value="1"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a24">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a25">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a35">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a34">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a33">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a32">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a31">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a41">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a42">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a43">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a44">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a45">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="ResultsPane">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -435,26 +469,31 @@
             <Component class="javax.swing.JTextField" name="a06">
               <Properties>
                 <Property name="text" type="java.lang.String" value="10"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a16">
               <Properties>
                 <Property name="text" type="java.lang.String" value="20"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a26">
               <Properties>
                 <Property name="text" type="java.lang.String" value="30"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a36">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="a46">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="toolTipText" type="java.lang.String" value="Insertar los datos requeridos"/>
               </Properties>
             </Component>
           </SubComponents>

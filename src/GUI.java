@@ -29,6 +29,7 @@ public class GUI extends javax.swing.JFrame {
         newtonMethod = new javax.swing.JButton();
         GaussMethod = new javax.swing.JButton();
         PolynomialMethod = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +54,13 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Horner");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,14 +70,19 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PolynomialMethod)
                     .addComponent(GaussMethod)
-                    .addComponent(newtonMethod))
-                .addContainerGap(232, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(newtonMethod)
+                        .addGap(56, 56, 56)
+                        .addComponent(jButton1)))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(newtonMethod)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newtonMethod)
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addComponent(GaussMethod)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -99,6 +112,12 @@ public class GUI extends javax.swing.JFrame {
         poly.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_PolynomialMethodActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        GUIHornerMethod horner = new GUIHornerMethod();
+        horner.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,6 +157,7 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton GaussMethod;
     private javax.swing.JButton PolynomialMethod;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton newtonMethod;
     // End of variables declaration//GEN-END:variables
 }

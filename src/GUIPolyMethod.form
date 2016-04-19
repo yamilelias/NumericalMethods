@@ -36,7 +36,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="ValuesPanel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="67" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="84" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -91,6 +91,7 @@
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
             <Property name="text" type="java.lang.String" value="0 2.1&#xa;1 7.7&#xa;2 13.6&#xa;3 27.2&#xa;4 40.9&#xa;5 61.1"/>
+            <Property name="toolTipText" type="java.lang.String" value="Insertar los datos (x,y) separados por un espacio para identificarlos"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -98,6 +99,7 @@
     <Component class="javax.swing.JButton" name="principalButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Principal"/>
+        <Property name="toolTipText" type="java.lang.String" value="Volver al men&#xfa; principal"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="principalButtonActionPerformed"/>
@@ -170,6 +172,7 @@
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                   <SpinnerModel initial="2" maximum="512" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Selecciona el grado de la funci&#xf3;n"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Default Cursor"/>
                 </Property>
@@ -186,6 +189,7 @@
         <Component class="javax.swing.JButton" name="calculateButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Calcular"/>
+            <Property name="toolTipText" type="java.lang.String" value="Calcular el polinomio para los datos"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculateButtonActionPerformed"/>

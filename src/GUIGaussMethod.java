@@ -89,6 +89,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         scrollPane.setViewportView(resultArea);
 
         calculateButton.setText("Calcular");
+        calculateButton.setToolTipText("Calcular los valores conforme a los datos de la matriz");
         calculateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calculateButtonActionPerformed(evt);
@@ -96,6 +97,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         });
 
         cleanButton.setText("Limpiar");
+        cleanButton.setToolTipText("Limpia la matriz y el resultado");
         cleanButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cleanButtonActionPerformed(evt);
@@ -103,13 +105,17 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         });
 
         principalButton.setText("Principal");
+        principalButton.setToolTipText("Volver al menú principal");
         principalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 principalButtonActionPerformed(evt);
             }
         });
 
+        ValuesPane.setToolTipText("");
+
         a01.setText("1");
+        a01.setToolTipText("Insertar los datos requeridos");
         a01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a01ActionPerformed(evt);
@@ -117,10 +123,13 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         });
 
         a02.setText("2");
+        a02.setToolTipText("Insertar los datos requeridos");
 
         a03.setText("3");
+        a03.setToolTipText("Insertar los datos requeridos");
 
         a04.setText("0");
+        a04.setToolTipText("Insertar los datos requeridos");
         a04.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a04ActionPerformed(evt);
@@ -128,46 +137,67 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         });
 
         a05.setText("0");
+        a05.setToolTipText("Insertar los datos requeridos");
 
         a15.setText("0");
+        a15.setToolTipText("Insertar los datos requeridos");
 
         a14.setText("0");
+        a14.setToolTipText("Insertar los datos requeridos");
 
         a13.setText("6");
+        a13.setToolTipText("Insertar los datos requeridos");
 
         a12.setText("5");
+        a12.setToolTipText("Insertar los datos requeridos");
 
         a22.setText("8");
+        a22.setToolTipText("Insertar los datos requeridos");
 
         a11.setText("4");
+        a11.setToolTipText("Insertar los datos requeridos");
 
         a21.setText("7");
+        a21.setToolTipText("Insertar los datos requeridos");
 
         a23.setText("1");
+        a23.setToolTipText("Insertar los datos requeridos");
 
         a24.setText("0");
+        a24.setToolTipText("Insertar los datos requeridos");
 
         a25.setText("0");
+        a25.setToolTipText("Insertar los datos requeridos");
 
         a35.setText("0");
+        a35.setToolTipText("Insertar los datos requeridos");
 
         a34.setText("0");
+        a34.setToolTipText("Insertar los datos requeridos");
 
         a33.setText("0");
+        a33.setToolTipText("Insertar los datos requeridos");
 
         a32.setText("0");
+        a32.setToolTipText("Insertar los datos requeridos");
 
         a31.setText("0");
+        a31.setToolTipText("Insertar los datos requeridos");
 
         a41.setText("0");
+        a41.setToolTipText("Insertar los datos requeridos");
 
         a42.setText("0");
+        a42.setToolTipText("Insertar los datos requeridos");
 
         a43.setText("0");
+        a43.setToolTipText("Insertar los datos requeridos");
 
         a44.setText("0");
+        a44.setToolTipText("Insertar los datos requeridos");
 
         a45.setText("0");
+        a45.setToolTipText("Insertar los datos requeridos");
 
         javax.swing.GroupLayout ValuesPaneLayout = new javax.swing.GroupLayout(ValuesPane);
         ValuesPane.setLayout(ValuesPaneLayout);
@@ -266,15 +296,22 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        ResultsPane.setToolTipText("");
+
         a06.setText("10");
+        a06.setToolTipText("Insertar los datos requeridos");
 
         a16.setText("20");
+        a16.setToolTipText("Insertar los datos requeridos");
 
         a26.setText("30");
+        a26.setToolTipText("Insertar los datos requeridos");
 
         a36.setText("0");
+        a36.setToolTipText("Insertar los datos requeridos");
 
         a46.setText("0");
+        a46.setToolTipText("Insertar los datos requeridos");
 
         javax.swing.GroupLayout ResultsPaneLayout = new javax.swing.GroupLayout(ResultsPane);
         ResultsPane.setLayout(ResultsPaneLayout);

@@ -77,9 +77,11 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         inputTextArea.setColumns(20);
         inputTextArea.setRows(5);
         inputTextArea.setText("0 2.1\n1 7.7\n2 13.6\n3 27.2\n4 40.9\n5 61.1");
+        inputTextArea.setToolTipText("Insertar los datos (x,y) separados por un espacio para identificarlos");
         inputScrollPane.setViewportView(inputTextArea);
 
         principalButton.setText("Principal");
+        principalButton.setToolTipText("Volver al menú principal");
         principalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 principalButtonActionPerformed(evt);
@@ -87,6 +89,7 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         });
 
         gradeField.setModel(new javax.swing.SpinnerNumberModel(2, 1, 512, 1));
+        gradeField.setToolTipText("Selecciona el grado de la función");
         gradeField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         gradeField.setOpaque(false);
 
@@ -117,6 +120,7 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         );
 
         calculateButton.setText("Calcular");
+        calculateButton.setToolTipText("Calcular el polinomio para los datos");
         calculateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calculateButtonActionPerformed(evt);
@@ -162,7 +166,7 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(ValuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 67, Short.MAX_VALUE))))
+                                .addGap(0, 84, Short.MAX_VALUE))))
                     .addComponent(resultScrollPane))
                 .addContainerGap())
         );
