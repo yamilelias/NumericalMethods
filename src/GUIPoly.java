@@ -66,7 +66,7 @@ public final class GUIPoly extends javax.swing.JFrame {
         GradePanel = new javax.swing.JPanel();
         gradeField = new javax.swing.JSpinner();
         gradeLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        calculateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,7 +76,7 @@ public final class GUIPoly extends javax.swing.JFrame {
 
         inputTextArea.setColumns(20);
         inputTextArea.setRows(5);
-        inputTextArea.setText("1 2\n3 4\n2 3\n-1 2\n2 2");
+        inputTextArea.setText("0 2.1\n1 7.7\n2 13.6\n3 27.2\n4 40.9\n5 61.1");
         inputScrollPane.setViewportView(inputTextArea);
 
         principalButton.setText("Principal");
@@ -116,10 +116,10 @@ public final class GUIPoly extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Calcular");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        calculateButton.setText("Calcular");
+        calculateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                calculateButtonActionPerformed(evt);
             }
         });
 
@@ -129,7 +129,7 @@ public final class GUIPoly extends javax.swing.JFrame {
             ValuesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ValuesPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(calculateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
             .addGroup(ValuesPanelLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
@@ -142,7 +142,7 @@ public final class GUIPoly extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(GradePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(calculateButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -187,9 +187,10 @@ public final class GUIPoly extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
+        setDegree((int)gradeField.getValue());
         process(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_calculateButtonActionPerformed
 
     private void principalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principalButtonActionPerformed
         GUI gui = new GUI();
@@ -279,12 +280,7 @@ public final class GUIPoly extends javax.swing.JFrame {
             this.dataXmin = this.xmin;
             this.dataYmax = this.ymax;
             this.dataYmin = this.ymin;
-            /*if (update) { // If update is true, then change TextArea
-                this.tableStartTextField.setText(String.format("%.2f", this.dataXmin));
-                this.tableEndTextField.setText(String.format("%.2f", this.dataXmax));
-                double step = (this.dataXmax - this.dataXmin) / 20.0;
-                this.tableStepSizeTextField.setText(String.format("%.2f", step));
-            }*/
+            
             double q = (this.ymax - this.ymin) / 6.0;
             this.ymin -= q;
             this.ymax += q;
@@ -433,35 +429,6 @@ public final class GUIPoly extends javax.swing.JFrame {
         String row = String.format(format, p, y, pct);
         return row;
     }
-
-    /*public void generateTable() {
-        try {
-            String newRow;
-            double a = Double.parseDouble(this.tableStartTextField.getText());
-            double b = Double.parseDouble(this.tableEndTextField.getText());
-            double stepSize = Double.parseDouble(this.tableStepSizeTextField.getText());
-            int places = Integer.parseInt(this.decimalPlacesTextField.getText());
-            if (stepSize <= 0.0) {
-                throw new Exception("Step size must be > 0");
-            }
-            double lp = 0.0;
-            StringBuilder sb = new StringBuilder();
-            String oldRow = "";
-            sb.append("x,y,%\n");
-            for (double p = a; p <= b; p += stepSize) {
-                lp = p;
-                oldRow = this.generateRow(a, p, b, places);
-                sb.append(oldRow);
-            }
-            if (lp < b && !oldRow.equals(newRow = this.generateRow(a, b, b, places))) {
-                sb.append(newRow);
-            }
-            this.writeResult(sb.toString(), this.tableResultTextArea);
-        }
-        catch (Exception e) {
-            this.writeResult(e.toString(), this.tableResultTextArea);
-        }
-    }*/
     
     /**
      * @param args the command line arguments
@@ -501,30 +468,13 @@ public final class GUIPoly extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel GradePanel;
     private javax.swing.JPanel ValuesPanel;
+    private javax.swing.JButton calculateButton;
     private javax.swing.JSpinner gradeField;
     private javax.swing.JLabel gradeLabel;
     private javax.swing.JScrollPane inputScrollPane;
     private javax.swing.JTextArea inputTextArea;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton principalButton;
     private javax.swing.JScrollPane resultScrollPane;
     private javax.swing.JTextArea resultTextArea;
     // End of variables declaration//GEN-END:variables
 } // End of GUIPoly
-
-/*
-class MyDocumentListener implements DocumentListener {
-    MyDocumentListener() {}
-
-    public void insertUpdate(DocumentEvent e) {
-        GUIPoly.this.process(true);
-    }
-
-    public void removeUpdate(DocumentEvent e) {
-        GUIPoly.this.process(true);
-    }
-
-    public void changedUpdate(DocumentEvent e) {
-        GUIPoly.this.process(true);
-    }
-}*/
