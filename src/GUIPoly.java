@@ -35,7 +35,7 @@ public final class GUIPoly extends javax.swing.JFrame {
     public int listingForm = 1;
     public boolean error;
     public boolean reverseMode = false;
-    private final String defaultData = "-1 -1\n0 3\n1 2.5\n2 5\n3 4\n5 2\n7 5\n9 4\n"; //Aquí está la información que viene por default en el programa
+    //private final String defaultData = "-1 -1\n0 3\n1 2.5\n2 5\n3 4\n5 2\n7 5\n9 4\n"; //Aquí está la información que viene por default en el programa
     ArrayList<Pair> userDataList;
     ArrayList<Double> terms;
     double result_cc;
@@ -61,10 +61,12 @@ public final class GUIPoly extends javax.swing.JFrame {
         resultTextArea = new javax.swing.JTextArea();
         inputScrollPane = new javax.swing.JScrollPane();
         inputTextArea = new javax.swing.JTextArea();
-        ValuesPanel = new javax.swing.JPanel();
-        gradeField = new javax.swing.JSpinner();
         principalButton = new javax.swing.JButton();
+        ValuesPanel = new javax.swing.JPanel();
+        GradePanel = new javax.swing.JPanel();
+        gradeField = new javax.swing.JSpinner();
         gradeLabel = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,44 +76,74 @@ public final class GUIPoly extends javax.swing.JFrame {
 
         inputTextArea.setColumns(20);
         inputTextArea.setRows(5);
+        inputTextArea.setText("1 2\n3 4\n2 3\n-1 2\n2 2");
         inputScrollPane.setViewportView(inputTextArea);
+
+        principalButton.setText("Principal");
+        principalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                principalButtonActionPerformed(evt);
+            }
+        });
 
         gradeField.setModel(new javax.swing.SpinnerNumberModel(2, 1, 512, 1));
         gradeField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         gradeField.setOpaque(false);
 
-        principalButton.setText("Principal");
-
         gradeLabel.setText("Grado de la función");
+
+        javax.swing.GroupLayout GradePanelLayout = new javax.swing.GroupLayout(GradePanel);
+        GradePanel.setLayout(GradePanelLayout);
+        GradePanelLayout.setHorizontalGroup(
+            GradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GradePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GradePanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(gradeLabel)
+                        .addGap(26, 26, 26))
+                    .addComponent(gradeField))
+                .addContainerGap())
+        );
+        GradePanelLayout.setVerticalGroup(
+            GradePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GradePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gradeLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gradeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jButton1.setText("Calcular");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ValuesPanelLayout = new javax.swing.GroupLayout(ValuesPanel);
         ValuesPanel.setLayout(ValuesPanelLayout);
         ValuesPanelLayout.setHorizontalGroup(
             ValuesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ValuesPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(ValuesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ValuesPanelLayout.createSequentialGroup()
-                        .addComponent(principalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(ValuesPanelLayout.createSequentialGroup()
-                        .addComponent(gradeField)
-                        .addGap(22, 22, 22))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
             .addGroup(ValuesPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(gradeLabel)
-                .addGap(0, 36, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addComponent(GradePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         ValuesPanelLayout.setVerticalGroup(
             ValuesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ValuesPanelLayout.createSequentialGroup()
+            .addGroup(ValuesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(principalButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(gradeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(gradeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(GradePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,29 +155,47 @@ public final class GUIPoly extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(inputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(88, 88, 88)
-                        .addComponent(ValuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 77, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(principalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(ValuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 67, Short.MAX_VALUE))))
                     .addComponent(resultScrollPane))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(inputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(principalButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ValuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)))
+                        .addGap(37, 37, 37)))
                 .addComponent(resultScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        process(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void principalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principalButtonActionPerformed
+        GUI gui = new GUI();
+        gui.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_principalButtonActionPerformed
 
     
     /**
@@ -449,11 +499,13 @@ public final class GUIPoly extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel GradePanel;
     private javax.swing.JPanel ValuesPanel;
     private javax.swing.JSpinner gradeField;
     private javax.swing.JLabel gradeLabel;
     private javax.swing.JScrollPane inputScrollPane;
     private javax.swing.JTextArea inputTextArea;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton principalButton;
     private javax.swing.JScrollPane resultScrollPane;
     private javax.swing.JTextArea resultTextArea;
