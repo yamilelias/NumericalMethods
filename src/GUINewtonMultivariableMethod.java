@@ -46,7 +46,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         label_yvalue = new javax.swing.JLabel();
         xValueTextField = new javax.swing.JTextField();
         yValueTextField = new javax.swing.JTextField();
-        label_results = new javax.swing.JLabel();
         firstFunctionPanel = new javax.swing.JPanel();
         label_function01 = new javax.swing.JLabel();
         label_grade01 = new javax.swing.JLabel();
@@ -197,8 +196,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                     .addComponent(yValueTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        label_results.setText("Resultados");
 
         firstFunctionPanel.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -723,9 +720,7 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                             .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(secondFunctionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(label_results)
-                            .addComponent(resultScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(resultScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(principalButton)
@@ -736,9 +731,7 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(principalButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(label_results)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(firstFunctionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -860,14 +853,14 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
 
                         if((jop==0)&&(jop1==0))
                         {
-                            resultTextArea = calculator.main();
+                            resultTextArea.setText(calculator.main());
                             resetButton.setEnabled(true); // Activates reset button
                         }
                     }
                 }
                 else
                 {
-                    resultTextArea = calculator.main();
+                    resultTextArea.setText(calculator.main());
                     resetButton.setEnabled(true);
                 }
             }
@@ -906,21 +899,16 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
     }//GEN-LAST:event_yValueTextFieldMouseClicked
 
     private void gradeScroller01ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_gradeScroller01ItemStateChanged
-        // Checkbox
-
-        //System.out.println("Paso esto: " + evt.getStateChange());
 
         switch ((String)evt.getItem()) {
             case "1":
             if(evt.getStateChange()==1)
             {
                 x0Panel_01.setVisible(true);
-                //System.out.println("Entro a 1");
             }
             else if(evt.getStateChange()==2)
             {
                 x0Panel_01.setVisible(false);
-                //System.out.println("Salio de 1");
             }
             break;
             case "2":
@@ -928,13 +916,11 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
             {
                 x0Panel_01.setVisible(true);
                 x1Panel_01.setVisible(true);
-                //System.out.println("Entro a 2");
             }
             else if(evt.getStateChange()==2)
             {
                 x0Panel_01.setVisible(false);
                 x1Panel_01.setVisible(false);
-                //System.out.println("Salio de 2");
             }
             break;
             case "3":
@@ -943,14 +929,12 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x0Panel_01.setVisible(true);
                 x1Panel_01.setVisible(true);
                 x2Panel_01.setVisible(true);
-                //System.out.println("Entro a 3");
             }
             else if(evt.getStateChange()==2)
             {
                 x0Panel_01.setVisible(false);
                 x1Panel_01.setVisible(false);
                 x2Panel_01.setVisible(false);
-                //System.out.println("Salio de 3");
             }
             break;
             case "4":
@@ -960,7 +944,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x1Panel_01.setVisible(true);
                 x2Panel_01.setVisible(true);
                 x3Panel_01.setVisible(true);
-                //System.out.println("Entro a 4");
             }
             else if(evt.getStateChange()==2)
             {
@@ -968,7 +951,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x1Panel_01.setVisible(false);
                 x2Panel_01.setVisible(false);
                 x3Panel_01.setVisible(false);
-                //System.out.println("Salio de 4");
             }
             break;
             case "5":
@@ -979,7 +961,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x2Panel_01.setVisible(true);
                 x3Panel_01.setVisible(true);
                 x4Panel_01.setVisible(true);
-                //System.out.println("Entro a 5");
             }
             else if(evt.getStateChange()==2)
             {
@@ -988,7 +969,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x2Panel_01.setVisible(false);
                 x3Panel_01.setVisible(false);
                 x4Panel_01.setVisible(false);
-                //System.out.println("Salio de 5");
             }
             break;
             default:
@@ -1024,19 +1004,15 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
     private void gradeScroller02ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_gradeScroller02ItemStateChanged
         // TODO add your handling code here:
 
-        //System.out.println("Paso esto: " + evt.getStateChange());
-
         switch ((String)evt.getItem()) {
             case "1":
             if(evt.getStateChange()==1)
             {
                 x0Panel_02.setVisible(true);
-                //System.out.println("Entro a 1");
             }
             else if(evt.getStateChange()==2)
             {
                 x0Panel_02.setVisible(false);
-                //System.out.println("Salio de 1");
             }
             break;
             case "2":
@@ -1044,13 +1020,11 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
             {
                 x0Panel_02.setVisible(true);
                 x1Panel_02.setVisible(true);
-                //System.out.println("Entro a 2");
             }
             else if(evt.getStateChange()==2)
             {
                 x0Panel_02.setVisible(false);
                 x1Panel_02.setVisible(false);
-                //System.out.println("Salio de 2");
             }
             break;
             case "3":
@@ -1059,14 +1033,12 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x0Panel_02.setVisible(true);
                 x1Panel_02.setVisible(true);
                 x2Panel_02.setVisible(true);
-                //System.out.println("Entro a 3");
             }
             else if(evt.getStateChange()==2)
             {
                 x0Panel_02.setVisible(false);
                 x1Panel_02.setVisible(false);
                 x2Panel_02.setVisible(false);
-                //System.out.println("Salio de 3");
             }
             break;
             case "4":
@@ -1076,7 +1048,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x1Panel_02.setVisible(true);
                 x2Panel_02.setVisible(true);
                 x3Panel_02.setVisible(true);
-                //System.out.println("Entro a 4");
             }
             else if(evt.getStateChange()==2)
             {
@@ -1084,7 +1055,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x1Panel_02.setVisible(false);
                 x2Panel_02.setVisible(false);
                 x3Panel_02.setVisible(false);
-                //System.out.println("Salio de 4");
             }
             break;
             case "5":
@@ -1095,7 +1065,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x2Panel_02.setVisible(true);
                 x3Panel_02.setVisible(true);
                 x4Panel_02.setVisible(true);
-                //System.out.println("Entro a 5");
             }
             else if(evt.getStateChange()==2)
             {
@@ -1104,7 +1073,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                 x2Panel_02.setVisible(false);
                 x3Panel_02.setVisible(false);
                 x4Panel_02.setVisible(false);
-                //System.out.println("Salio de 5");
             }
             break;
             default:
@@ -1143,6 +1111,19 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_principalButtonActionPerformed
 
+    public void hideElements(){
+        x4Panel_01.setVisible(false);
+        x3Panel_01.setVisible(false);
+        x2Panel_01.setVisible(false);
+        x1Panel_01.setVisible(false);
+        x0Panel_01.setVisible(false);
+        
+        x4Panel_02.setVisible(false);
+        x3Panel_02.setVisible(false);
+        x2Panel_02.setVisible(false);
+        x1Panel_02.setVisible(false);
+        x0Panel_02.setVisible(false);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calculateButton;
@@ -1160,7 +1141,6 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
     private javax.swing.JLabel label_function02;
     private javax.swing.JLabel label_grade01;
     private javax.swing.JLabel label_grade02;
-    private javax.swing.JLabel label_results;
     private javax.swing.JLabel label_xvalue;
     private javax.swing.JLabel label_yvalue;
     private javax.swing.JButton principalButton;

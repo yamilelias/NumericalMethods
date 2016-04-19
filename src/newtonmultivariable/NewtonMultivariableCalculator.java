@@ -36,12 +36,12 @@ public class NewtonMultivariableCalculator {
         this.funcion2 = funcion2;
     }
       
-    public JTextArea main() 
+    public String main() 
     {
-        JTextArea resultArea = new JTextArea();
+        String resultArea = "";
         
-        resultArea.setText("    i \t x \t\t\t y \t\t\t ||Delta||\n");
-        resultArea.append("______________________________________________________________________________________________________________________\n");
+        resultArea = "    i \t x \t\t\t y \t\t\t ||Delta||\n";
+        resultArea += "______________________________________________________________________________________________________________________\n";
         
         do
         { 
@@ -68,27 +68,27 @@ public class NewtonMultivariableCalculator {
             {
                 if(py.length()<=7)
                 {
-                    resultArea.append("    " + i + "\t" + px + "\t\t\t" + py + "\t\t\t"+ pitagoras + "\n");
+                    resultArea += "    " + i + "\t" + px + "\t\t\t" + py + "\t\t\t"+ pitagoras + "\n";
                 }
                 else
                 {
-                    resultArea.append("    " + i + "\t" + px + "\t\t\t" + py + "\t\t"+ pitagoras + "\n");
+                    resultArea += "    " + i + "\t" + px + "\t\t\t" + py + "\t\t"+ pitagoras + "\n";
                 }
             }
             else if(py.length()<=7)
             {
                if(px.length()<=7)
                 {
-                    resultArea.append("    " + i + "\t" + px + "\t\t\t" + py + "\t\t\t"+ pitagoras + "\n");
+                    resultArea += "    " + i + "\t" + px + "\t\t\t" + py + "\t\t\t"+ pitagoras + "\n";
                 }
                 else
                 {
-                    resultArea.append("    " + i + "\t" + px + "\t\t" + py + "\t\t\t"+ pitagoras + "\n");
+                    resultArea += "    " + i + "\t" + px + "\t\t" + py + "\t\t\t"+ pitagoras + "\n";
                 }
             }
             else
             {
-                resultArea.append("    " + i + "\t" + px + "\t\t" + py + "\t\t"+ pitagoras + "\n");
+                resultArea += "    " + i + "\t" + px + "\t\t" + py + "\t\t"+ pitagoras + "\n";
             }
                 
                 
