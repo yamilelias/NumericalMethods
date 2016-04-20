@@ -39,9 +39,9 @@ public class NewtonMultivariableCalculator {
       
     public void main() 
     {
-        
-        result = "    i \t x \t\t\t y \t\t\t ||Delta||\n";
-        result += "______________________________________________________________________________________________________________________\n";
+        result = "";
+        //result = "    i \t x \t\t\t y \t\t\t ||Delta||\n";
+        //result += "______________________________________________________________________________________________________________________\n";
         
         do
         { 
@@ -92,7 +92,6 @@ public class NewtonMultivariableCalculator {
             }
                 
                 
-            
             i++;
         }while(pitagoras > .0001);
     }
