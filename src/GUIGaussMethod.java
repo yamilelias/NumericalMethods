@@ -80,6 +80,7 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         label_y = new javax.swing.JLabel();
         label_z = new javax.swing.JLabel();
         label_r = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -426,6 +427,9 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        titleLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        titleLabel.setText("Gauss Jordan");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -435,19 +439,23 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollPane)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 117, Short.MAX_VALUE)
                         .addComponent(MatrixPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(143, 143, 143)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(principalButton))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(calculateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                    .addComponent(cleanButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(39, 39, 39)))))
+                                    .addComponent(calculateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cleanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 204, Short.MAX_VALUE)))))
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(398, 398, 398)
+                    .addComponent(titleLabel)
+                    .addContainerGap(74, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -461,9 +469,14 @@ public class GUIGaussMethod extends javax.swing.JFrame {
                         .addComponent(calculateButton)
                         .addGap(18, 18, 18)
                         .addComponent(cleanButton)
-                        .addGap(13, 13, 13)))
+                        .addGap(18, 18, 18)))
                 .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(107, 107, 107)
+                    .addComponent(titleLabel)
+                    .addContainerGap(497, Short.MAX_VALUE)))
         );
 
         pack();
@@ -631,5 +644,6 @@ public class GUIGaussMethod extends javax.swing.JFrame {
     private javax.swing.JButton principalButton;
     private javax.swing.JTextArea resultArea;
     private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }
