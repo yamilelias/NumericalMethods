@@ -29,8 +29,10 @@ public class GUI extends javax.swing.JFrame {
         newtonMethod = new javax.swing.JButton();
         GaussMethod = new javax.swing.JButton();
         PolynomialMethod = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        hornerMethod = new javax.swing.JButton();
+        newtonMultivariableMethod = new javax.swing.JButton();
+        titleLabel1 = new javax.swing.JLabel();
+        matrixMethod = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,17 +57,27 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Horner");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        hornerMethod.setText("Horner");
+        hornerMethod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                hornerMethodActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Newton Multivariable");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        newtonMultivariableMethod.setText("Newton Multivariable");
+        newtonMultivariableMethod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                newtonMultivariableMethodActionPerformed(evt);
+            }
+        });
+
+        titleLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        titleLabel1.setText("Metodos numericos");
+
+        matrixMethod.setText("Matrices");
+        matrixMethod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                matrixMethodActionPerformed(evt);
             }
         });
 
@@ -74,33 +86,44 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PolynomialMethod)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(newtonMethod)
-                            .addComponent(GaussMethod))
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(newtonMethod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PolynomialMethod, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(GaussMethod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(hornerMethod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(newtonMultivariableMethod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(matrixMethod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(74, 74, 74)
+                    .addComponent(titleLabel1)
+                    .addContainerGap(65, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(119, 119, 119)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newtonMultivariableMethod)
+                    .addComponent(GaussMethod))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hornerMethod)
+                    .addComponent(PolynomialMethod))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newtonMethod)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GaussMethod)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PolynomialMethod)
+                    .addComponent(matrixMethod))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(40, 40, 40)
+                    .addComponent(titleLabel1)
+                    .addContainerGap(132, Short.MAX_VALUE)))
         );
 
         pack();
@@ -126,18 +149,22 @@ public class GUI extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_PolynomialMethodActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void hornerMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hornerMethodActionPerformed
         GUIHornerMethod horner = new GUIHornerMethod();
         horner.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_hornerMethodActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void newtonMultivariableMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newtonMultivariableMethodActionPerformed
         GUINewtonMultivariableMethod newtonMulti = new GUINewtonMultivariableMethod();
         newtonMulti.hideElements();
         newtonMulti.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_newtonMultivariableMethodActionPerformed
+
+    private void matrixMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrixMethodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matrixMethodActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,8 +204,10 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton GaussMethod;
     private javax.swing.JButton PolynomialMethod;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton hornerMethod;
+    private javax.swing.JButton matrixMethod;
     private javax.swing.JButton newtonMethod;
+    private javax.swing.JButton newtonMultivariableMethod;
+    private javax.swing.JLabel titleLabel1;
     // End of variables declaration//GEN-END:variables
 }
