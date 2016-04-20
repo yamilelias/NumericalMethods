@@ -62,35 +62,8 @@ public class NewtonMultivariableCalculator {
             
             if(py.length()>=17)
                 py = py.substring(0,16);
-            
-            //Para una impresión bonita
-            if(px.length()<=6)
-            {
-                if(py.length()<=7)
-                {
-                    result += "    " + i + "\t" + px + "\t\t\t" + py + "\t\t\t"+ pitagoras + "\n";
-                }
-                else
-                {
-                    result += "    " + i + "\t" + px + "\t\t\t" + py + "\t\t"+ pitagoras + "\n";
-                }
-            }
-            else if(py.length()<=7)
-            {
-               if(px.length()<=7)
-                {
-                    result += "    " + i + "\t" + px + "\t\t\t" + py + "\t\t\t"+ pitagoras + "\n";
-                }
-                else
-                {
-                    result += "    " + i + "\t" + px + "\t\t" + py + "\t\t\t"+ pitagoras + "\n";
-                }
-            }
-            else
-            {
-                result += "    " + i + "\t" + px + "\t\t" + py + "\t\t"+ pitagoras + "\n";
-            }
-                
+
+            result += "     " + i + "\t" + roundDown3(Double.parseDouble(px)) + "\t" + roundDown3(Double.parseDouble(py)) + "\t"+ roundDown3(pitagoras) + "\n";
                 
             i++;
         }while(pitagoras > .0001);
@@ -162,6 +135,14 @@ public class NewtonMultivariableCalculator {
     private void nuevaXY() {
             x = x - delta[0];
             y = y - delta[1];
+    }
+    
+    /**
+     * Auxiliary method to round down double variables
+     * 
+     */
+    private static double roundDown3(double d) {
+    return (long) (d * 1e3) / 1e3;
     }
     
     public String getResult() {

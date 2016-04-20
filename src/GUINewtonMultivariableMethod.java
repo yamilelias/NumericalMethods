@@ -729,13 +729,13 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
             .addGroup(labelsPanelLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(label_i, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addGap(59, 59, 59)
                 .addComponent(label_x, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(246, 246, 246)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(label_y, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
                 .addComponent(label_delta)
-                .addGap(115, 115, 115))
+                .addGap(20, 20, 20))
         );
         labelsPanelLayout.setVerticalGroup(
             labelsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -764,8 +764,8 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
                     .addComponent(principalButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resultScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE))
+                    .addComponent(resultScrollPane)
+                    .addComponent(labelsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(13, 13, 13))
         );
         layout.setVerticalGroup(
