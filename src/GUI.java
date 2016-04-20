@@ -157,13 +157,15 @@ public class GUI extends javax.swing.JFrame {
 
     private void newtonMultivariableMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newtonMultivariableMethodActionPerformed
         GUINewtonMultivariableMethod newtonMulti = new GUINewtonMultivariableMethod();
-        newtonMulti.hideElements();
+        newtonMulti.hideElements(); // This is to hide the functions in the Newton Raphson Multivariable Application
         newtonMulti.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_newtonMultivariableMethodActionPerformed
 
     private void matrixMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrixMethodActionPerformed
-        // TODO add your handling code here:
+        GUIMatrixMethod matrix = new GUIMatrixMethod();
+        matrix.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_matrixMethodActionPerformed
 
     /**
