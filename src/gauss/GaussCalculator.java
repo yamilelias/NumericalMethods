@@ -19,9 +19,9 @@ public class GaussCalculator {
     /**
      * Constructor
      *
-     * @param size      Size of the matrix
-     * @param matrix    Matrix that will be used to calculate values
-     * @param area      JTextArea where we will print everything
+     * @param size Size of the matrix
+     * @param matrix Matrix that will be used to calculate values
+     * @param area JTextArea where we will print everything
      * @see JTextArea
      */
     public GaussCalculator(int size, double[][] matrix, JTextArea area) {
@@ -144,39 +144,114 @@ public class GaussCalculator {
             printTextArea();    // So it will print in the text area
         }
 
-        pivot_first_value = matrix[(size - 1)][(size - 1)];
-        if (pivot_first_value == 0) {
-            multipleSolutionMethod(size);
-        } else {
-            for (int i = 0; i < 6; i++) {
-                matrix[3][i] = matrix[3][i] / pivot_first_value;
-            }
-            values_making_zero = matrix[0][(size - 1)];
-            for (int i = 0; i < 6; i++) {
-                value[i] = matrix[3][i] * -values_making_zero;
-                matrix[0][i] = value[i] + matrix[0][i];
+        if (size >= 3) {
+            pivot_first_value = matrix[2][2];
+            if (pivot_first_value == 0) {
+                multipleSolutionMethod(size);
+            } else {
+                for (int i = 0; i < 6; i++) {
+                    matrix[2][i] = matrix[2][i] / pivot_first_value;
+                }
+                values_making_zero = matrix[0][2];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[2][i] * -values_making_zero;
+                    matrix[0][i] = value[i] + matrix[0][i];
 
-            }
-            values_making_zero = matrix[1][(size - 1)];
-            for (int i = 0; i < 6; i++) {
-                value[i] = matrix[3][i] * -values_making_zero;
-                matrix[1][i] = value[i] + matrix[1][i];
+                }
+                values_making_zero = matrix[1][2];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[2][i] * -values_making_zero;
+                    matrix[1][i] = value[i] + matrix[1][i];
 
+                }
+
+                values_making_zero = matrix[3][2];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[2][i] * -values_making_zero;
+                    matrix[3][i] = value[i] + matrix[3][i];
+
+                }
+                values_making_zero = matrix[4][2];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[2][i] * -values_making_zero;
+                    matrix[4][i] = value[i] + matrix[4][i];
+
+                }
+                printTextArea();
+            }
+        }
+        if (size >= 4) {
+            pivot_first_value = matrix[3][3];
+            if (pivot_first_value == 0) {
+                multipleSolutionMethod(size);
+            } else {
+                for (int i = 0; i < 6; i++) {
+                    matrix[3][i] = matrix[3][i] / pivot_first_value;
+                }
+                values_making_zero = matrix[0][3];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[3][i] * -values_making_zero;
+                    matrix[0][i] = value[i] + matrix[0][i];
+
+                }
+                values_making_zero = matrix[1][3];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[3][i] * -values_making_zero;
+                    matrix[1][i] = value[i] + matrix[1][i];
+
+                }
+
+                values_making_zero = matrix[2][3];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[3][i] * -values_making_zero;
+                    matrix[2][i] = value[i] + matrix[2][i];
+
+                }
+                values_making_zero = matrix[4][3];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[3][i] * -values_making_zero;
+                    matrix[4][i] = value[i] + matrix[4][i];
+
+                }
+                printTextArea();
+            }
+        }
+        if (size == 5) {
+            pivot_first_value = matrix[4][4];
+            if (pivot_first_value == 0) {
+                multipleSolutionMethod(size);
+            } else {
+                for (int i = 0; i < 6; i++) {
+                    matrix[4][i] = matrix[4][i] / pivot_first_value;
+                }
+                values_making_zero = matrix[0][4];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[4][i] * -values_making_zero;
+                    matrix[0][i] = value[i] + matrix[0][i];
+
+                }
+                values_making_zero = matrix[1][4];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[4][i] * -values_making_zero;
+                    matrix[1][i] = value[i] + matrix[1][i];
+
+                }
+
+                values_making_zero = matrix[2][4];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[4][i] * -values_making_zero;
+                    matrix[2][i] = value[i] + matrix[2][i];
+
+                }
+                values_making_zero = matrix[3][4];
+                for (int i = 0; i < 6; i++) {
+                    value[i] = matrix[4][i] * -values_making_zero;
+                    matrix[3][i] = value[i] + matrix[3][i];
+
+                }
+                printTextArea();
             }
 
-            values_making_zero = matrix[2][(size - 1)];
-            for (int i = 0; i < 6; i++) {
-                value[i] = matrix[3][i] * -values_making_zero;
-                matrix[2][i] = value[i] + matrix[2][i];
-
-            }
-            values_making_zero = matrix[4][(size - 1)];
-            for (int i = 0; i < 6; i++) {
-                value[i] = matrix[3][i] * -values_making_zero;
-                matrix[4][i] = value[i] + matrix[4][i];
-
-            }
-            printTextArea();
         }
 
         //This switch is to show the result depending on the matrix size
@@ -191,10 +266,8 @@ public class GaussCalculator {
             }
             case 3: {
                 if (matrix[0][0] == 1 && matrix[1][1] == 1 && matrix[2][2] == 1) {
-                    area.append(" V= " + matrix[0][5] + "\n W= " + matrix[1][5] + "\n X= "
-                            + matrix[2][5]);
-                } else if (matrix[2][0] == 0 && matrix[2][1] == 0 && matrix[2][2] == 0
-                        && matrix[2][5] > 0) {
+                    area.append(" V= " + matrix[0][5] + "\n W= " + matrix[1][5] + "\n X= " + matrix[2][5]);
+                } else if (matrix[2][0] == 0 && matrix[2][1] == 0 && matrix[2][2] == 0 && matrix[2][5] > 0) {
                     area.append("Inconsistencia");
                 }
                 break;
