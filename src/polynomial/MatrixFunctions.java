@@ -4,16 +4,27 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import polynomial.Pair;
 
-/*
- * This class specifies class file version 49.0 but uses Java 6 signatures.  Assumed Java 6.
+/**
+ * Part of this code was used from a project from the {@link http://arachnoid.com/} site
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
  */
 public final class MatrixFunctions {
+    
     /**
-     * Constructor
+     * Empty Constructor
      */    
     private MatrixFunctions() {
     }
 
+    /**
+     * Inner method to divide
+     * @param A Recieves a two dimension array
+     * @param i position for the division
+     * @param j position of the division
+     * @param m Iterations for the loop
+     */
     private static void gj_divide(double[][] A, int i, int j, int m) {
         int q = j + 1;
         while (q < m) {
@@ -24,6 +35,14 @@ public final class MatrixFunctions {
         A[i][j] = 1.0;
     }
 
+    /**
+     * Inner method to divide
+     * @param A Recieves a two dimension array
+     * @param i position for the elimination
+     * @param j position of the elimination
+     * @param n Iterations for the loop
+     * @param m 
+     */
     private static void gj_eliminate(double[][] A, int i, int j, int n, int m) {
         for (int k = 0; k < n; ++k) {
             if (k == i || A[k][j] == 0.0) continue;
@@ -36,6 +55,10 @@ public final class MatrixFunctions {
         }
     }
 
+    /**
+     * Method that implements {@link #gj_divide(double[][], int, int, int) } and {@link #gj_eliminate(double[][], int, int, int, int) }
+     * @param A Two dimention array for the calculation
+     */
     private static void gj_echelonize(double[][] A) {
         int n = A.length;
         int m = A[0].length;
@@ -58,6 +81,13 @@ public final class MatrixFunctions {
         }
     }
 
+    /**
+     * Method to be used by {@link #corr_coeff(java.util.ArrayList, java.util.ArrayList) }
+     * @param x
+     * @param terms Double ArrayList
+     * @return 
+     * @see ArrayList
+     */
     public static double regress(double x, ArrayList<Double> terms) {
         double a = 0.0;
         int exp = 0;
@@ -70,6 +100,13 @@ public final class MatrixFunctions {
         return a;
     }
 
+    /**
+     * Method for the calculation
+     * @param data  Pair ArrayList<Pair> that will be use for calculation
+     * @param terms Pair ArrayList<Double> that will be use for calculation
+     * @return      Double value of the calculation
+     * @see Pair, ArrayList
+     */
     public static double corr_coeff(ArrayList<Pair> data, ArrayList<Double> terms) {
         double r = 0.0;
         int n = data.size();
@@ -94,6 +131,13 @@ public final class MatrixFunctions {
         return r;
     }
 
+    /**
+     * Method for the calculation
+     * @param data  Pair ArrayList<Pair> that will be use for calculation
+     * @param terms Pair ArrayList<Double> that will be use for calculation
+     * @return      Returns a double value
+     * @see Pair, ArrayList
+     */
     public static double std_error(ArrayList<Pair> data, ArrayList<Double> terms) {
         double r = 0.0;
         int n = data.size();
@@ -109,9 +153,10 @@ public final class MatrixFunctions {
 
     /**
      * Method that compute coefficients
-     * @param data ArrayList<Pair>
+     * @param data ArrayList<Pair> used for calculation
      * @param p integer value
      * @return ArrayList<Double>
+     * @see ArrayList, Pair
      */
     public static ArrayList<Double> compute_coefficients(ArrayList<Pair> data, int p) {
         int r; // Aux int

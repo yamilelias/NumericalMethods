@@ -1,22 +1,19 @@
 package newton;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author Yamil Elías
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
  */
 public class NewtonCalculator {
     
     private String result;
         
     /**
-     * Unique constructor 
-     * 
+     * Unique constructor for Calculator
+     * @param args          Recieves an String array of the function
+     * @param iterations    Number of times the program will iterate
      */
     public NewtonCalculator(String[] args, int iterations){
         double[] function = new double[args.length]; // Create new space function
@@ -33,8 +30,9 @@ public class NewtonCalculator {
     }
     
     /**
-     * Derive method to obtain f'(x)
-     * 
+     * Method to derivate a function and save it in a double array
+     * @param function  Receive the desired function to derivate
+     * @return          Derivated function
      */
     private double[] derive_method(double[] function){
         double[] derived_function = function; // Generate a new array
@@ -50,8 +48,10 @@ public class NewtonCalculator {
     }
     
     /**
-     * Get f(x) values
-     * 
+     * Method to get the total of a function
+     * @param function  Receive the desired function to get the result
+     * @param x_init    Get the value that will replace the x
+     * @return          Return the total of the function replaced with the value
      */
     private double get_fx_value_method(double[] function, double x_init){ //
         double fx_total=0;
@@ -67,8 +67,10 @@ public class NewtonCalculator {
     }
     
     /**
-     * Get g(x) values
-     * 
+     * Method to get the total of a derivated function
+     * @param function  Receive the desired derivated function to get the result
+     * @param x_init    Get the value that will replace the x
+     * @return          Return the total of the derivated function replaced with the value
      */
     private double get_derivated_value_method(double[] function, double x_init){
         double gx_total=0;
@@ -85,8 +87,11 @@ public class NewtonCalculator {
     
     
     /**
-     * Values printer
-     * 
+     * Method that will get the iterations values
+     * @param x_init            The starting x value
+     * @param iteration_times   Number of times the program will iterate
+     * @param function          Function that will use for the calculation
+     * @param derived_function  Derived Function that will use for the calculation
      */
     public void iterator(final double x_init, int iteration_times, double[] function, double[] derived_function){
         double[] fx_values = new double[iteration_times+1];
@@ -114,13 +119,18 @@ public class NewtonCalculator {
     }
     
     /**
-     * Auxiliary method to round down double variables
-     * 
+     * Method to round up a number up to three decimals
+     * @param d Number recieved
+     * @return  Return the number rounded up
      */
     private static double roundDown3(double d) {
     return (long) (d * 1e3) / 1e3;
     }
 
+    /**
+     * Return Result value, that is the printing result
+     * @return Return result value
+     */
     public String getResult() {
         return result;
     }

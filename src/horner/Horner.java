@@ -1,29 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package horner;
 
 /**
  *
- * @author Yamil Elías
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-18
  */
 public class Horner {
     
-    // Global Variables
+    /**
+     * Int Array that will hold the derivated function
+     */
     public int dx[]=new int [5];
     
     /**
      * Evaluate the variables from the function
-     * @param v5
-     * @param v4
-     * @param v3
-     * @param v2
-     * @param v1
-     * @param vc
-     * @param vi
+     * @param v5    x^5
+     * @param v4    x^4
+     * @param v3    x^3
+     * @param v2    x^2
+     * @param v1    Linear x
+     * @param vc    Constant x
+     * @param vi    Initial x
      * @return 
      */
     public int evaluate (int v5, int v4, int v3, int v2, int v1, int vc,int vi){
@@ -40,12 +38,12 @@ public class Horner {
     
     /**
      * Method to derivate the function that was provided by the user
-     * @param v5
-     * @param v4
-     * @param v3
-     * @param v2
-     * @param v1
-     * @param vi
+     * @param v5    x^5
+     * @param v4    x^4
+     * @param v3    x^3
+     * @param v2    x^2
+     * @param v1    Linear x
+     * @param vi    Initial x
      * @return 
      */
     public String derivate (int v5, int v4, int v3, int v2, int v1,int vi){
