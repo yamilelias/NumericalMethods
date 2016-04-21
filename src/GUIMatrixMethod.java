@@ -17,26 +17,8 @@ public class GUIMatrixMethod implements ActionListener {
     private static JPanel choosePanel[] = new JPanel[8];
     private static int lastCol, lastRow;
 
-    /*
-     * Methods:
-     * 16 - private static double getValue (double [][] matrix)
-     *      return determination's values but only inner the program
-     * 17 - private static void guiTransporter (double [][] matrix)
-     *      getting determination's values by using transporter method 
-     *      and show it the user
-     * 18 - private static double [][] transporter (double [][] matrix)
-     *      return determinations's transporter but only inner the program
-     * 19 - getMinor return the minor of cofactors in order to get 
-     *      inversing matrix
-     * 20 - private static void swap (double [] res1, double [] res2)
-     *      for swaping two rows in order using to to get determination's value 
-     * 21 - private static void  inverse  ()
-     *      Do inversing operation for determinations
-     * 22-  private static void newMatrix ()
-     *      Enable the user to enter a new matrix and use the program's 
-     *      features on it
-     * 23-  public static void main (String [] args)
-     *      For invoking the program
+    /**
+     * Constructor for the matrix program
      */
     GUIMatrixMethod() {
         col = row = 0;
@@ -151,7 +133,7 @@ public class GUIMatrixMethod implements ActionListener {
                     if (isDouble(tempString)) {
                         matrix[temp][temp1] = Double.parseDouble(inputField[temp][temp1].getText());
                     } else {
-                        JOptionPane.showMessageDialog(null, "You entered wrong elements");
+                        JOptionPane.showMessageDialog(null, "Ingresaste elementos erroneos");
 
                         //backup
                         col = lastCol;
@@ -192,7 +174,7 @@ public class GUIMatrixMethod implements ActionListener {
             choosePanel[temp] = new JPanel();
         }
 
-        JLabel chooseLabel = new JLabel("Matrices");
+        JLabel chooseLabel = new JLabel("");
         choosePanel[0].add(chooseLabel);
 
         choosePanel[1].add(Box.createHorizontalStrut(15)); // a spacer
@@ -251,15 +233,19 @@ public class GUIMatrixMethod implements ActionListener {
         newMatrix.addActionListener(this);
         choosePanel[5].add(newMatrix);
 
-        JOptionPane.showConfirmDialog(null, choosePanel, "Matrices", JOptionPane.CLOSED_OPTION, JOptionPane.PLAIN_MESSAGE);
-        /*showOptionDialog(null,
+        Object[] object = {"Principal"};
+        //JOptionPane.showConfirmDialog(null, choosePanel, "Matrices", JOptionPane.CLOSED_OPTION, JOptionPane.PLAIN_MESSAGE);
+        int choice = JOptionPane.showOptionDialog(null,
                    choosePanel,
                    "Matrices",
-                   JOptionPane.CLOSED_OPTION,
+                   JOptionPane.YES_NO_OPTION,
                    JOptionPane.PLAIN_MESSAGE,
                    null,
-                   Object[] options,
-                   Object initialValue)*/
+                   object, object[0]);
+        if(choice == 0){
+            GUI gui = new GUI();
+            gui.setVisible(true);
+        }
     }
 
     /**
@@ -410,7 +396,7 @@ public class GUIMatrixMethod implements ActionListener {
 
                 m2 = new double[col][col2];
                 results = new double[row][col2];
-                if (setElements(m2, "Fill multiplying matrix")) {
+                if (setElements(m2, "Ingresa la matriz a multiplicar")) {
                     for (int i = 0; i < row; i++) {
                         for (int j = 0; j < col2; j++) {
                             sum = 0;
@@ -422,7 +408,7 @@ public class GUIMatrixMethod implements ActionListener {
                         }
                     }
 
-                    showMatrix(results, "Mulitiplication Result");
+                    showMatrix(results, "Resultado");
                 }// elements checking
             }// dimensions checking
             else {
@@ -518,21 +504,19 @@ public class GUIMatrixMethod implements ActionListener {
     }//end dividing by number
 
     /**
-     * Getting determinaiton's values by using getValue method and show it to the user 
+     * Getting determination's values by using getValue method and show it to the user 
      */
     private static void guiGetValue() {
         if (myMatrix.length < 1) {
-            JOptionPane.showMessageDialog(null, "You haven't entered any matrix");
+            JOptionPane.showMessageDialog(null, "No has ingresado una matriz");
         } else if (col != row) {
-            JOptionPane.showMessageDialog(null, "You must enter square matrix");
+            JOptionPane.showMessageDialog(null, "Debes ingresar una matriz cuadrada");
         } else {
             double result = getValue(myMatrix);
 
-            JOptionPane.showMessageDialog(null, String.format("Determination's Value = %.2f",
-                    getValue(myMatrix)), null,
-                    JOptionPane.PLAIN_MESSAGE, null);
+            JOptionPane.showMessageDialog(null, String.format("Determinante = %.2f", getValue(myMatrix)), null, JOptionPane.PLAIN_MESSAGE, null);
         }
-    }//end gui get Value
+    }//end guiGetValue
 
     /**
      * For swaping two rows in order using to to get determination's value 
@@ -628,7 +612,7 @@ public class GUIMatrixMethod implements ActionListener {
      */
     private static void guiTransposing(double[][] matrix) {
         if (myMatrix.length < 1) {
-            JOptionPane.showMessageDialog(null, "You haven't entered any matrix");
+            JOptionPane.showMessageDialog(null, "No has ingresado una matriz");
             return;
         }
 
@@ -636,7 +620,7 @@ public class GUIMatrixMethod implements ActionListener {
 
         transMatrix = transposing(matrix);
 
-        showMatrix(transMatrix, "Trasnposing Matrix");
+        showMatrix(transMatrix, "Matriz transpuesta");
     }
 
     /**
@@ -650,8 +634,7 @@ public class GUIMatrixMethod implements ActionListener {
 
         for (temp = 0; temp < matrix[0].length; temp++) {
             for (temp1 = 0; temp1 < matrix.length; temp1++) {
-                transportMatrix[temp][temp1]
-                        = matrix[temp1][temp]; //swap (temp, temp1)
+                transportMatrix[temp][temp1] = matrix[temp1][temp]; //swap (temp, temp1)
             }
         }
         return transportMatrix;
@@ -687,19 +670,17 @@ public class GUIMatrixMethod implements ActionListener {
     }
 
     /**
-     * 
+     * Do inversing operation for determinations
      */
     private static void inverse() {
         if (myMatrix.length < 1) {
-            JOptionPane.showMessageDialog(null, "You haven't entered any matrix");
+            JOptionPane.showMessageDialog(null, "No has ingresado una Matriz");
             return;
         } else if (col != row) {
-            JOptionPane.showMessageDialog(null, "You must enter square matrix");
+            JOptionPane.showMessageDialog(null, "Debes ingresar una matriz cuadrada");
             return;
         } else if (getValue(myMatrix) == 0) {
-            JOptionPane.showMessageDialog(null, "Your Matrix "
-                    + "hasn't an inverse one\n\n"
-                    + "Because its value = 0");
+            JOptionPane.showMessageDialog(null, "Tu matriz no tiene una inversa\n\n porque su valor es cero");
             return;
         }
 
@@ -728,7 +709,7 @@ public class GUIMatrixMethod implements ActionListener {
             }
         }
 
-        showMatrix(inverseMatrix, "Inversing Matrix");
+        showMatrix(inverseMatrix, "Matriz inversa");
 
     }//end inverse
 
@@ -763,13 +744,11 @@ public class GUIMatrixMethod implements ActionListener {
         return true;
     }
 
+    /**
+     * Enable the user to enter a new matrix and use the program's features on it
+     */
     private static void newMatrix() {
         getDimension();
-    }
-
-    public static void main(String[] args) {
-        GUIMatrixMethod m1 = new GUIMatrixMethod();
-
     }
 }//end class
 

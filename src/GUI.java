@@ -163,8 +163,8 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_newtonMultivariableMethodActionPerformed
 
     private void matrixMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrixMethodActionPerformed
-        GUIMatrixMethod matrix = new GUIMatrixMethod();
         this.setVisible(false);
+        GUIMatrixMethod matrix = new GUIMatrixMethod();
     }//GEN-LAST:event_matrixMethodActionPerformed
 
     /**
