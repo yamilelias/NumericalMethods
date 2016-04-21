@@ -164,7 +164,6 @@ public class GUI extends javax.swing.JFrame {
 
     private void matrixMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matrixMethodActionPerformed
         GUIMatrixMethod matrix = new GUIMatrixMethod();
-        matrix.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_matrixMethodActionPerformed
 
