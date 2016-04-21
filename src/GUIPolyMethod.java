@@ -67,8 +67,9 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         gradeField = new javax.swing.JSpinner();
         gradeLabel = new javax.swing.JLabel();
         calculateButton = new javax.swing.JButton();
-        titleLabel = new javax.swing.JLabel();
+        titlePane = new javax.swing.JPanel();
         titleLabel1 = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,7 +96,7 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         gradeField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         gradeField.setOpaque(false);
 
-        gradeLabel.setText("Grado de la función");
+        gradeLabel.setText("Grado de la funcion");
 
         javax.swing.GroupLayout GradePanelLayout = new javax.swing.GroupLayout(GradePanel);
         GradePanel.setLayout(GradePanelLayout);
@@ -152,11 +153,32 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        titleLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        titleLabel1.setText("Polynomial");
+
         titleLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         titleLabel.setText("Regression");
 
-        titleLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        titleLabel1.setText("Polynomial");
+        javax.swing.GroupLayout titlePaneLayout = new javax.swing.GroupLayout(titlePane);
+        titlePane.setLayout(titlePaneLayout);
+        titlePaneLayout.setHorizontalGroup(
+            titlePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(titlePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titleLabel)
+                    .addComponent(titleLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        titlePaneLayout.setVerticalGroup(
+            titlePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(titlePaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titleLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,25 +190,17 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(inputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(18, 18, Short.MAX_VALUE)
-                                .addComponent(principalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(60, 60, 60)
-                                        .addComponent(ValuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(30, 30, 30)
-                                        .addComponent(titleLabel)))
-                                .addGap(0, 118, Short.MAX_VALUE))))
+                                .addGap(60, 60, 60)
+                                .addComponent(ValuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(titlePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(principalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(resultScrollPane))
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(204, 204, 204)
-                    .addComponent(titleLabel1)
-                    .addContainerGap(154, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,20 +211,14 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
                         .addComponent(inputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(principalButton)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titlePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(principalButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(titleLabel)
-                        .addGap(18, 18, 18)
                         .addComponent(ValuesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)))
                 .addComponent(resultScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(21, 21, 21)
-                    .addComponent(titleLabel1)
-                    .addContainerGap(447, Short.MAX_VALUE)))
         );
 
         pack();
@@ -507,5 +515,6 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
     private javax.swing.JTextArea resultTextArea;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel titleLabel1;
+    private javax.swing.JPanel titlePane;
     // End of variables declaration//GEN-END:variables
 } // End of GUIPoly

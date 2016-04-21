@@ -174,7 +174,8 @@ public class GUIMatrixMethod implements ActionListener {
             choosePanel[temp] = new JPanel();
         }
 
-        JLabel chooseLabel = new JLabel("");
+        JLabel chooseLabel = new JLabel("Matrices");
+        chooseLabel.setFont(new java.awt.Font("Tahoma", 1, 36));
         choosePanel[0].add(chooseLabel);
 
         choosePanel[1].add(Box.createHorizontalStrut(15)); // a spacer

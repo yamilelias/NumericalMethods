@@ -107,14 +107,14 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(119, 119, 119)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(newtonMultivariableMethod)
-                    .addComponent(GaussMethod))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GaussMethod, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(newtonMultivariableMethod))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hornerMethod)
                     .addComponent(PolynomialMethod))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newtonMethod)
                     .addComponent(matrixMethod))
@@ -123,7 +123,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(40, 40, 40)
                     .addComponent(titleLabel1)
-                    .addContainerGap(132, Short.MAX_VALUE)))
+                    .addContainerGap(137, Short.MAX_VALUE)))
         );
 
         pack();
