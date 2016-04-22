@@ -1,7 +1,5 @@
 package newtonmultivariable;
 
-import javax.swing.JTextArea;
-
 /**
  * In numerical analysis, Newton's method (also known as the Newton–Raphson method), named after Isaac Newton and Joseph Raphson, is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function.
  * @author Yamil Elías <yamileliassoto@gmail.com>
@@ -17,7 +15,7 @@ public class NewtonMultivariableCalculator {
     /**
      * Grades used for the function
      */
-    private int grado1, grado2;
+    private int grade1, grade2;
     /**
      * Variables for the functions
      */
@@ -33,23 +31,23 @@ public class NewtonMultivariableCalculator {
     /**
      * Functions used for the program
      */
-    private double[] funcion1, funcion2;
+    private double[] function1, function2;
     /**
      * Arrays of the results and the first function and his derivated function
      */
-    private double[] resultado1, derivada1;
+    private double[] results1, derivated1;
     /**
      * Arrays of the results and the sencond function and his derivated function
      */
-    private double[] resultado2, derivada2;
+    private double[] results2, derivated2;
     /**
      * Two dimensional array used for the calculation of the result
      */
-    private double[][] jacob, inversa;
+    private double[][] jacob, inverse;
     /**
      * Determinant value
      */
-    private double determinante;
+    private double determinant;
     /**
      * Array of delta values
      */
@@ -66,20 +64,20 @@ public class NewtonMultivariableCalculator {
     /**
      * Constructor for the calculator
      *
-     * @param grado1 First function grade
-     * @param grado2 Second function grade
+     * @param grade1 First function grade
+     * @param grade2 Second function grade
      * @param x Value of x
      * @param y Value of y
-     * @param funcion1 First function to be evaluated
-     * @param funcion2 Second function to be evaluated
+     * @param function1 First function to be evaluated
+     * @param function2 Second function to be evaluated
      */
-    public NewtonMultivariableCalculator(int grado1, int grado2, double x, double y, double[] funcion1, double[] funcion2) {
-        this.grado1 = grado1;
-        this.grado2 = grado2;
+    public NewtonMultivariableCalculator(int grade1, int grade2, double x, double y, double[] function1, double[] function2) {
+        this.grade1 = grade1;
+        this.grade2 = grade2;
         this.x = x;
         this.y = y;
-        this.funcion1 = funcion1;
-        this.funcion2 = funcion2;
+        this.function1 = function1;
+        this.function2 = function2;
     }
 
     /**
@@ -119,17 +117,17 @@ public class NewtonMultivariableCalculator {
      * This method evaluates the derivated
      */
     private void evaluateDerivate() {
-        resultado1 = Horner(x, grado1, funcion1);
-        fx1 = resultado1[grado1 - 1] - y;
+        results1 = Horner(x, grade1, function1);
+        fx1 = results1[grade1 - 1] - y;
 
-        derivada1 = Horner(x, grado1, resultado1);
-        dx1 = derivada1[grado1 - 2];    // Is grado-2 because is the value of the derivated evaluated in x
+        derivated1 = Horner(x, grade1, results1);
+        dx1 = derivated1[grade1 - 2];    // Is grado-2 because is the value of the derivated evaluated in x
 
-        resultado2 = Horner(x, grado2, funcion2);
-        fx2 = resultado2[grado2 - 1] - y;
+        results2 = Horner(x, grade2, function2);
+        fx2 = results2[grade2 - 1] - y;
 
-        derivada2 = Horner(x, grado2, resultado2);
-        dx2 = derivada2[grado2 - 2];    // Is grado-2 because is the value of the derivated evaluated in x
+        derivated2 = Horner(x, grade2, results2);
+        dx2 = derivated2[grade2 - 2];    // Is grado-2 because is the value of the derivated evaluated in x
     }
 
     /**
@@ -168,12 +166,12 @@ public class NewtonMultivariableCalculator {
      * Gets the inverse to continue with the calculation
      */
     private void sacarInversa() {
-        determinante = (jacob[0][0] * jacob[1][1]) - (jacob[0][1] * jacob[1][0]);
-        inversa = new double[2][2];
-        inversa[0][0] = jacob[1][1] / determinante;
-        inversa[0][1] = -jacob[0][1] / determinante;
-        inversa[1][0] = -jacob[1][0] / determinante;
-        inversa[1][1] = jacob[0][0] / determinante;
+        determinant = (jacob[0][0] * jacob[1][1]) - (jacob[0][1] * jacob[1][0]);
+        inverse = new double[2][2];
+        inverse[0][0] = jacob[1][1] / determinant;
+        inverse[0][1] = -jacob[0][1] / determinant;
+        inverse[1][0] = -jacob[1][0] / determinant;
+        inverse[1][1] = jacob[0][0] / determinant;
     }
 
     /**
@@ -181,12 +179,9 @@ public class NewtonMultivariableCalculator {
      */
     private void sacarDelta() {
         delta = new double[2];
-        delta[0] = (inversa[0][0] * fx1) + (inversa[0][1] * fx2);
-        //System.out.println("DELTA1: " + delta[0]);
-        delta[1] = (inversa[1][0] * fx1) + (inversa[1][1] * fx2);
-        //System.out.println("DELTA2: " + delta[1]);
+        delta[0] = (inverse[0][0] * fx1) + (inverse[0][1] * fx2);
+        delta[1] = (inverse[1][0] * fx1) + (inverse[1][1] * fx2);
         pitagoras = Math.abs(Math.sqrt(Math.pow(delta[0], 2) + Math.pow(delta[1], 2)));
-        //System.out.println(pitagoras);
     }
 
     /**

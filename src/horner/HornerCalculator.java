@@ -6,7 +6,7 @@ package horner;
  * @version 1.0
  * @since 2016-04-18
  */
-public class Horner {
+public class HornerCalculator {
     
     /**
      * Int Array that will hold the derivated function

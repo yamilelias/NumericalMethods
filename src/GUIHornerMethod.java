@@ -1,4 +1,4 @@
-import horner.Horner;
+import horner.HornerCalculator;
 
 /**
  *
@@ -242,7 +242,7 @@ public class GUIHornerMethod extends javax.swing.JFrame {
      * @param evt 
      */
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
-        Horner horner = new Horner();
+        HornerCalculator horner = new HornerCalculator();
         String resultado = "F(" + innitialTextField.getText() + ")=";
         resultTextArea.setText("");
         resultado += "" + horner.evaluate(Integer.parseInt(x5.getText()), Integer.parseInt(x4.getText()), Integer.parseInt(x3.getText()), Integer.parseInt(x2.getText()), Integer.parseInt(x1.getText()), Integer.parseInt(x0.getText()), Integer.parseInt(innitialTextField.getText())) + "\n";

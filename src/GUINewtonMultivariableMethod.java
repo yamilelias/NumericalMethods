@@ -10,9 +10,9 @@ import newtonmultivariable.NewtonMultivariableCalculator;
 public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
 
     //Variables globales
-    int grado1, grado2;
+    int grade1, grade2;
     double x, y;
-    double[] funcion1, funcion2;
+    double[] function1, function2;
 
     NewtonMultivariableCalculator calculator;
     
@@ -812,12 +812,12 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
             //Se define variables
 
             //Grados de funciones
-            grado1 = Integer.parseInt((String) gradeScroller01.getSelectedItem());
-            grado2 = Integer.parseInt((String) gradeScroller02.getSelectedItem());
+            grade1 = Integer.parseInt((String) gradeScroller01.getSelectedItem());
+            grade2 = Integer.parseInt((String) gradeScroller02.getSelectedItem());
 
             //Se crea la función en base al grado
-            funcion1 = new double[grado1];
-            funcion2 = new double[grado2];
+            function1 = new double[grade1];
+            function2 = new double[grade2];
 
             //Se asignan valores a 'x' y 'y'
             x = Double.parseDouble(xValueTextField.getText());
@@ -826,29 +826,29 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
             //Formar array de primer polinomio
             switch ((String) gradeScroller01.getSelectedItem()) {
                 case "1":
-                funcion1[0] = Double.parseDouble(v_0.getText());
+                function1[0] = Double.parseDouble(v_0.getText());
                 break;
                 case "2":
-                funcion1[1] = Double.parseDouble(v_0.getText());
-                funcion1[0] = Double.parseDouble(v_1.getText());
+                function1[1] = Double.parseDouble(v_0.getText());
+                function1[0] = Double.parseDouble(v_1.getText());
                 break;
                 case "3":
-                funcion1[2] = Double.parseDouble(v_0.getText());
-                funcion1[1] = Double.parseDouble(v_1.getText());
-                funcion1[0] = Double.parseDouble(v_2.getText());
+                function1[2] = Double.parseDouble(v_0.getText());
+                function1[1] = Double.parseDouble(v_1.getText());
+                function1[0] = Double.parseDouble(v_2.getText());
                 break;
                 case "4":
-                funcion1[3] = Double.parseDouble(v_0.getText());
-                funcion1[2] = Double.parseDouble(v_1.getText());
-                funcion1[1] = Double.parseDouble(v_2.getText());
-                funcion1[0] = Double.parseDouble(v_3.getText());
+                function1[3] = Double.parseDouble(v_0.getText());
+                function1[2] = Double.parseDouble(v_1.getText());
+                function1[1] = Double.parseDouble(v_2.getText());
+                function1[0] = Double.parseDouble(v_3.getText());
                 break;
                 case "5":
-                funcion1[4] = Double.parseDouble(v_0.getText());
-                funcion1[3] = Double.parseDouble(v_1.getText());
-                funcion1[2] = Double.parseDouble(v_2.getText());
-                funcion1[1] = Double.parseDouble(v_3.getText());
-                funcion1[0] = Double.parseDouble(v_4.getText());
+                function1[4] = Double.parseDouble(v_0.getText());
+                function1[3] = Double.parseDouble(v_1.getText());
+                function1[2] = Double.parseDouble(v_2.getText());
+                function1[1] = Double.parseDouble(v_3.getText());
+                function1[0] = Double.parseDouble(v_4.getText());
                 break;
                 default:
                 break;
@@ -857,35 +857,35 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
             //Formar array de segundo polinomio
             switch ((String) gradeScroller02.getSelectedItem()) {
                 case "1":
-                funcion2[0] = Double.parseDouble(v_9.getText());
+                function2[0] = Double.parseDouble(v_9.getText());
                 break;
                 case "2":
-                funcion2[1] = Double.parseDouble(v_9.getText());
-                funcion2[0] = Double.parseDouble(v_8.getText());
+                function2[1] = Double.parseDouble(v_9.getText());
+                function2[0] = Double.parseDouble(v_8.getText());
                 break;
                 case "3":
-                funcion2[2] = Double.parseDouble(v_9.getText());
-                funcion2[1] = Double.parseDouble(v_8.getText());
-                funcion2[0] = Double.parseDouble(v_7.getText());
+                function2[2] = Double.parseDouble(v_9.getText());
+                function2[1] = Double.parseDouble(v_8.getText());
+                function2[0] = Double.parseDouble(v_7.getText());
                 break;
                 case "4":
-                funcion2[3] = Double.parseDouble(v_9.getText());
-                funcion2[2] = Double.parseDouble(v_8.getText());
-                funcion2[1] = Double.parseDouble(v_7.getText());
-                funcion2[0] = Double.parseDouble(v_6.getText());
+                function2[3] = Double.parseDouble(v_9.getText());
+                function2[2] = Double.parseDouble(v_8.getText());
+                function2[1] = Double.parseDouble(v_7.getText());
+                function2[0] = Double.parseDouble(v_6.getText());
                 break;
                 case "5":
-                funcion2[4] = Double.parseDouble(v_9.getText());
-                funcion2[3] = Double.parseDouble(v_8.getText());
-                funcion2[2] = Double.parseDouble(v_7.getText());
-                funcion2[1] = Double.parseDouble(v_6.getText());
-                funcion2[0] = Double.parseDouble(v_5.getText());
+                function2[4] = Double.parseDouble(v_9.getText());
+                function2[3] = Double.parseDouble(v_8.getText());
+                function2[2] = Double.parseDouble(v_7.getText());
+                function2[1] = Double.parseDouble(v_6.getText());
+                function2[0] = Double.parseDouble(v_5.getText());
                 break;
                 default:
                 break;
             }
             
-            calculator = new NewtonMultivariableCalculator(grado1, grado2, x, y, funcion1, funcion2);
+            calculator = new NewtonMultivariableCalculator(grade1, grade2, x, y, function1, function2);
         }
         catch (NumberFormatException | ArrayIndexOutOfBoundsException n)
         {

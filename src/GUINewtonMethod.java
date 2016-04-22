@@ -1,4 +1,5 @@
 import newton.NewtonCalculator;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -339,33 +340,39 @@ public class GUINewtonMethod extends javax.swing.JFrame {
      * @param evt 
      */
     private void calculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateActionPerformed
+        try {
+            String[] data = new String[6];
 
-        String[] data = new String[6];
+            if(x_exp0_value.getText()==null)
+                x_exp0_value.setText("0");
+            if(x_exp1_value.getText().equals(""))
+                x_exp1_value.setText("0");
+            if(x_exp2_value.getText().equals(""))
+                x_exp2_value.setText("0");
+            if(x_exp3_value.getText().equals(""))
+                x_exp3_value.setText("0");
+            if(x_exp4_value.getText().equals(""))
+                x_exp4_value.setText("0");
 
-        if(x_exp0_value.getText()==null)
-            x_exp0_value.setText("0");
-        if(x_exp1_value.getText().equals(""))
-            x_exp1_value.setText("0");
-        if(x_exp2_value.getText().equals(""))
-            x_exp2_value.setText("0");
-        if(x_exp3_value.getText().equals(""))
-            x_exp3_value.setText("0");
-        if(x_exp4_value.getText().equals(""))
-            x_exp4_value.setText("0");
+            // Get data from Text Fields
+            data[0] = x_value.getText();
+            data[1] = x_exp0_value.getText();
+            data[2] = x_exp1_value.getText();
+            data[3] = x_exp2_value.getText();
+            data[4] = x_exp3_value.getText();
+            data[5] = x_exp4_value.getText();
 
-        // Get data from Text Fields
-        data[0] = x_value.getText();
-        data[1] = x_exp0_value.getText();
-        data[2] = x_exp1_value.getText();
-        data[3] = x_exp2_value.getText();
-        data[4] = x_exp3_value.getText();
-        data[5] = x_exp4_value.getText();
+            int iterations = Integer.parseInt(iter_value.getText());
 
-        int iterations = Integer.parseInt(iter_value.getText());
+            calculator = new NewtonCalculator(data, iterations);
+            
+            resultArea.setText(calculator.getResult());
+            
+        } catch (NumberFormatException numberFormatException) {
+            JOptionPane.showMessageDialog(null, "Favor de ingresar correctamente todos los valores");
+        }
 
-        calculator = new NewtonCalculator(data, iterations);
-
-        resultArea.setText(calculator.getResult());
+        
     }//GEN-LAST:event_calculateActionPerformed
 
     private void x_exp3_valueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_x_exp3_valueActionPerformed
