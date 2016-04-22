@@ -3,6 +3,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ *
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
+ */
 public class GUIMatrixMethod implements ActionListener {
 
     private static int col, row;  //dimentions

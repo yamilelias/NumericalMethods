@@ -1,15 +1,11 @@
-/*
- *
- * 
- * 
- */
-
 import javax.swing.JOptionPane;
 import gauss.GaussCalculator;
 
 /**
  *
- * @author
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
  */
 public class GUIGaussMethod extends javax.swing.JFrame {
 
@@ -480,7 +476,10 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    /**
+     * Calculate the method Gauss-Jordan
+     * @param evt 
+     */
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
         try {
             int size = 2;
@@ -511,6 +510,9 @@ public class GUIGaussMethod extends javax.swing.JFrame {
 
     }//GEN-LAST:event_calculateButtonActionPerformed
 
+    /**
+     * Set up the matrix
+     */
     public void setMatrix(){
         resultArea.setText("");// Clean up Text Area (if it was already used)
         
@@ -554,6 +556,10 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_a04ActionPerformed
 
+    /**
+     * Clean up the matrix
+     * @param evt 
+     */
     private void cleanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanButtonActionPerformed
         a01.setText(""+0);
         a02.setText(""+0);
@@ -588,6 +594,10 @@ public class GUIGaussMethod extends javax.swing.JFrame {
         resultArea.setText("");
     }//GEN-LAST:event_cleanButtonActionPerformed
 
+    /**
+     * Return to principal page
+     * @param evt 
+     */
     private void principalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principalButtonActionPerformed
         // TODO add your handling code here:
         gui = new GUI();

@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import horner.Horner;
 
 /**
  *
- * @author Yamil Elías
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
  */
 public class GUIHornerMethod extends javax.swing.JFrame {
 
@@ -231,12 +227,20 @@ public class GUIHornerMethod extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Return to principal page
+     * @param evt 
+     */
     private void principalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principalButtonActionPerformed
         GUI gui = new GUI();
         gui.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_principalButtonActionPerformed
 
+    /**
+     * Calculates the Horner Method
+     * @param evt 
+     */
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
         Horner horner = new Horner();
         String resultado = "F(" + innitialTextField.getText() + ")=";

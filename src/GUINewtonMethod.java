@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import newton.NewtonCalculator;
 
 /**
  *
- * @author Yamil Elías
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
  */
 public class GUINewtonMethod extends javax.swing.JFrame {
 
@@ -326,6 +322,10 @@ public class GUINewtonMethod extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void x_valueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_x_valueActionPerformed
 
     }//GEN-LAST:event_x_valueActionPerformed
@@ -334,6 +334,10 @@ public class GUINewtonMethod extends javax.swing.JFrame {
 
     }//GEN-LAST:event_iter_valueActionPerformed
 
+    /**
+     * Calculates the values using Newton-Raphson Method
+     * @param evt 
+     */
     private void calculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateActionPerformed
 
         String[] data = new String[6];

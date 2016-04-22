@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.util.ArrayList;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -13,7 +7,9 @@ import polynomial.MatrixFunctions;
 
 /**
  *
- * @author Yamil Elías
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
  */
 public final class GUIPolyMethod extends javax.swing.JFrame {
 
@@ -297,6 +293,7 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
 
     /**
      * Change xmin, xmax, ymin and ymax values
+     * @param update Boolean if is ready to update
      */
     void getData(boolean update) {
         this.eps = 1.0E-12;
@@ -328,12 +325,17 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
     }
 
     /**
-     *  This method is only to print in console
+     * This method is only to print on console
+     * @param s What we will print up
      */
     void p(String s) {
         System.out.println(s);
     }
 
+    /**
+     * Process and starts the calculate of the method
+     * @param update Boolean if we are able to start the process
+     */
     public void process(boolean update) {
         this.data_valid = false;
         this.errorMsg = "";
@@ -356,26 +358,50 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Write the results on the AreaText
+     * @param s     What will be wrote
+     * @param jta   The text Area where we will print
+     * @see JTextArea
+     */
     private void writeResult(String s, JTextArea jta) {
             jta.setText(s);
     }
 
+    /**
+     * Set new degree
+     * @param v New degree
+     */
     void newDegree(int v) {
         this.poly_order += v;
         this.poly_order = this.poly_order < 0 ? 0 : this.poly_order;
         this.process(false);
     }
 
+    /**
+     * Set degree
+     * @param v 
+     */
     void setDegree(int v) {
         this.poly_order = v;
         this.newDegree(0);
     }
 
+    /**
+     * Format the number that will be print
+     * @param n     
+     * @param wide Set the wide for the string
+     * @return Return a string formated
+     */
     String formatNum(double n, boolean wide) {
         String w = wide ? "21" : "";
         return String.format("%" + w + ".12e", n);
     }
 
+    /**
+     * Showing results in the text Area
+     * @return String that have the result
+     */
     String showResult() {
         int n = this.userDataList.size();
         String r = "Resultado \n\n";
@@ -409,6 +435,10 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         return r;
     }
 
+    /**
+     * Shows the math made
+     * @param data Two size Double Array
+     */
     void show_mat(double[][] data) {
         double[][] arr$ = data;
         int len$ = arr$.length;
@@ -422,6 +452,14 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         System.out.println("***************");
     }
 
+    /**
+     * Find root
+     * @param y     The y from the function
+     * @param x     The x from the function
+     * @param terms ArrayList<Double>
+     * @param scale Scale given
+     * @return      Return a double
+     */
     double findRoot2(double y, double x, ArrayList<Double> terms, double scale) {
         int max = 256;
         boolean positive = true;
@@ -441,6 +479,13 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         return x;
     }
 
+    /**
+     * 
+     * @param y
+     * @param x
+     * @param terms
+     * @return 
+     */
     double findRoot(double y, double x, ArrayList<Double> terms) {
         double rx;
         double scale = Math.pow(2.0, -32.0);
@@ -451,14 +496,36 @@ public final class GUIPolyMethod extends javax.swing.JFrame {
         return rx;
     }
 
+    /**
+     * 
+     * @param x
+     * @return 
+     */
     double plotFunct(double x) {
         return MatrixFunctions.regress(x, this.terms);
     }
  
+    /**
+     * 
+     * @param xa
+     * @param xb
+     * @param ya
+     * @param yb
+     * @param x
+     * @return 
+     */
     double ntrp(double xa, double xb, double ya, double yb, double x) {
         return (x - xa) * (yb - ya) / (xb - xa) + ya;
     }
 
+    /**
+     * 
+     * @param a
+     * @param p
+     * @param b
+     * @param places
+     * @return 
+     */
     String generateRow(double a, double p, double b, int places) {
         double pct = this.ntrp(a, b, 0.0, 100.0, p);
         double y = MatrixFunctions.regress(p, this.terms);

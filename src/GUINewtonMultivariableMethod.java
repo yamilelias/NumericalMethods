@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import javax.swing.JOptionPane;
 import newtonmultivariable.NewtonMultivariableCalculator;
 
 /**
  *
- * @author Yamil Elías
+ * @author Yamil Elías <yamileliassoto@gmail.com>
+ * @version 1.0
+ * @since 2016-04-20
  */
 public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
 
@@ -803,6 +799,10 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Calculates the value using the Newton-Raphson Multivariable
+     * @param evt 
+     */
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
         // TODO add your handling code here:
 
@@ -924,6 +924,10 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_calculateButtonActionPerformed
 
+    /**
+     * Reset the values on the GUI
+     * @param evt 
+     */
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
         // TODO add your handling code here:
 
@@ -955,6 +959,10 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         yValueTextField.setText("");
     }//GEN-LAST:event_yValueTextFieldMouseClicked
 
+    /**
+     * Set the grade depending on the Scroller
+     * @param evt 
+     */
     private void gradeScroller01ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_gradeScroller01ItemStateChanged
 
         switch ((String)evt.getItem()) {
@@ -1053,6 +1061,10 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         v_0.setText("");
     }//GEN-LAST:event_v_0MouseClicked
 
+    /**
+     * Set the grade depending on the Scroller
+     * @param evt 
+     */
     private void gradeScroller02ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_gradeScroller02ItemStateChanged
 
         switch ((String)evt.getItem()) {
@@ -1156,6 +1168,10 @@ public class GUINewtonMultivariableMethod extends javax.swing.JFrame {
         v_9.setText("");
     }//GEN-LAST:event_v_9MouseClicked
 
+    /**
+     * Button to return to the main page
+     * @param evt 
+     */
     private void principalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_principalButtonActionPerformed
         GUI gui = new GUI();
         gui.setVisible(true);
